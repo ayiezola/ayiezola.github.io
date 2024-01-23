@@ -10,10 +10,10 @@
 ############################
 
 # Name of website
-title: Ayiezola | My Own Github Page
+title: Ayiezola
 
 # Your name to show in the footer
-author: Some Person
+author: Ayiezola
 
 ###############################################
 # --- List of links in the navigation bar --- #
@@ -22,9 +22,9 @@ author: Some Person
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - Linkedin: "https://beautifuljekyll.com"
+    - X : "https://www.markdowntutorial.com/"
+  Author's home: "Ayiezola"
 
 ################
 # --- Logo --- #
