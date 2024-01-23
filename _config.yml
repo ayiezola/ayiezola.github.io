@@ -20,8 +20,8 @@ author: Ayiezola
 ###############################################
 
 navbar-links:
-  WhoAmI: "WhoAmI"
-  MyTeam: "Zimple Com"
+  WhoAmI: "whoami"
+  MyTeam: "ZimpleCom"
   BuyMeCoffee: "https://www.buymeacoffee.com/ayiezola"
 
 ################
