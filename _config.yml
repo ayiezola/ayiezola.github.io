@@ -20,11 +20,9 @@ author: Ayiezola
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Linkedin: "https://beautifuljekyll.com"
-    - X : "https://www.markdowntutorial.com/"
-  Author's home: "Ayiezola"
+  WhoAmI: "WhoAmI"
+  MyTeam: "Zimple Com"
+  Author's home: "ayiezola"
 
 ################
 # --- Logo --- #
