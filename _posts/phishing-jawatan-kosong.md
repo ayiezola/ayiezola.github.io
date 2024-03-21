@@ -2,7 +2,7 @@
 layout: post
 title: Phishing Iklan Jawatan Kosong
 subtitle: Telegram Account Takeover
-tags: [phishing]
+tags: [test]
 comments: false
 author: Ayiezola
 ---
