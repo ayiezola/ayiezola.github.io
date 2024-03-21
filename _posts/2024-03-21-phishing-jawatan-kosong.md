@@ -11,6 +11,8 @@ Iklan Jawatan Kosong di Facebook will lead to Telegram Takeover.
 
 **Observe**
 
+![Crepe](/assets/phishing/malware-link-001.png)
+
 
 
 
