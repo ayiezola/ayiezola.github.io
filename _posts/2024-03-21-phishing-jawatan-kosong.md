@@ -107,6 +107,12 @@ Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing und
 > [!NOTE]
 > Dalam screenshot atas ni adalah scammer menggunakan storyline **Bantuan Rahmah Kerajaan**. Sama jugak method yang dia gunakan. Untuk check kelayakan kena login akaun telegram menggunakan pautan yang dia bagi dalam mesej tersebut.
 
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-026.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-027.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-028.png)
+
 
 
 
