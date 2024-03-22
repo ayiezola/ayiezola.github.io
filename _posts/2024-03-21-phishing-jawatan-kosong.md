@@ -25,6 +25,8 @@ Iklan Jawatan Kosong di Facebook will lead to Telegram Takeover.
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png" width="1200" height="600" >
+Ini adalah pautan iklan tersebut :
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-015.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-016.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-017.png" width="1200" height="600" >
