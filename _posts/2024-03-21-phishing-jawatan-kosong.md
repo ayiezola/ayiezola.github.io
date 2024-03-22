@@ -18,7 +18,7 @@ Gambar atas ni adalah screenshot iklan jawatan kosong dari halaman facebook pada
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png)
 
-Tuanx / puanx boleh lihat pada setiap komen pada posting iklan jawatan kosong tersebut. Begitu banyak individu yang tags kawan masing2. Kita dapat lihat bahawa scammer telah berjaya mengaburi mata pembaca. Misi scammer untuk spread iklan ni berjaya. Maksudnya scammer tak perlu lagi fikir macam mana nak hebahkan pautan phishing beliau.
+Tuanx / puanx boleh lihat pada setiap komen pada posting iklan jawatan kosong tersebut. Begitu banyak individu yang tags kawan masing2. Secara tak langsung scammer telah berjaya mengaburi mata pembaca. Misi scammer untuk spread iklan ni berjaya. Scammer tak perlu lagi fikir macam mana nak hebahkan pautan phishing beliau. 
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png)
 
