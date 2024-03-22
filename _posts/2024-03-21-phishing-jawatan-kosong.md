@@ -28,9 +28,13 @@ Imbasan terhadap domain yang scammer gunakan menunjukkan domain tersebut telah d
 
 Imbasan pada laman sesawang yang kedua pula menunjukkan domain tersebut telah redirect ke satu pautan lain.
 
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-009.png)
+
+Dalam gambar di atas ni kita boleh lihat banyak website phishing yang telah dibangunkan untuk tujuan money scam under domain wrmy6.com
+
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-011.png)
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-009.png)
+Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing under domain wrmy6.com, fuhh 😅. Website phishing ni kalau kita view source dia, kesemuanya lebih kurang sama, dia hanya perlu sunting text dan gambar sahaja untuk menampakkan ianya legit dan cantik. 
 
 # Iklan Jawatan Kosong
 
