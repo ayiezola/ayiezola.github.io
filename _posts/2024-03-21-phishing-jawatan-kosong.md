@@ -50,9 +50,9 @@ Halaman seterusnya pula kita dikehendaki untuk memasukkan password akaun telegra
 
 Paparan halaman seterusnya, tunggu 5 minit sambil mereka menyemak kelayakan kita. 🤯💩 Masa ini semua details dah ada pada scammer; Nama, Phone Number, OTP dan Password account telegram. Tiba masa untuk scammer mendapatkan access / takeover akaun telegram kita. 
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png" width="300" height="400" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-025.png" width="300" height="400" >
 
-Tatkala inilah objektif utama phishing ini akan dijalankan. Scammer akan DM rakan-rakan telegram kita untuk pinjam duit. 
+Tatkala inilah objektif utama phishing ini akan dijalankan. Scammer ini kemudiannya akan menggunakan teknik Social Enginering, beliau akan DM rakan-rakan telegram kita untuk pinjam duit. Kita pula mungkin tidak akan syak apa-apa memandangkan meseg itu adalah dari kenalan kita.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-019.png)
 
