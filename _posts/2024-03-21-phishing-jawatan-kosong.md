@@ -9,7 +9,7 @@ author: Ayiezola
 {: .box-warning}
 Iklan Jawatan Kosong di Facebook will lead to Telegram Takeover.
 
-**Observe**
+# Dalam IC ada duit
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-002.png" width="1200" height="600" >
@@ -24,6 +24,9 @@ Iklan Jawatan Kosong di Facebook will lead to Telegram Takeover.
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-009.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-010.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-011.png" width="1200" height="600" >
+
+# Iklan Jawatan Kosong
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png" width="1200" height="600" >
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png" width="1200" height="600" >
