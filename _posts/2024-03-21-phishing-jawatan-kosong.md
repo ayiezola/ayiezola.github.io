@@ -6,8 +6,6 @@ tags: [phishing]
 comments: false
 author: Ayiezola
 ---
-{: .box-warning}
-Iklan Jawatan Kosong di Facebook will lead to Telegram Takeover.
 
 # Dalam IC ada duit
 
