@@ -28,11 +28,7 @@ Imbasan terhadap domain yang scammer gunakan menunjukkan domain tersebut telah d
 
 Imbasan pada laman sesawang yang kedua pula menunjukkan domain tersebut telah redirect ke satu pautan lain.
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-007.png)
-
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-011.png)
-
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-008.png)
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-009.png)
 
