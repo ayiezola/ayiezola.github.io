@@ -13,8 +13,8 @@ author: Ayiezola
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-021.png)
 
-> [!NOTE]
-> Dalam screenshot atas ni kita dapat lihat cubaan scammer menipu dengan mengatakan dalam ic ada duit 💩.
+[!NOTE]
+Dalam screenshot atas ni kita dapat lihat cubaan scammer menipu dengan mengatakan dalam ic ada duit 💩.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-003.png)
 
