@@ -100,5 +100,14 @@ Dalam gambar di atas ni kita boleh lihat banyak website phishing yang telah diba
 
 Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing under domain wrmy6.com, fuhh 😅. Website phishing ni kalau kita view source dia, kesemuanya lebih kurang sama, dia hanya perlu sunting text dan gambar sahaja untuk menampakkan ianya legit dan cantik. 
 
+# Kes 3 : 
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png)
+
+> [!NOTE]
+> Dalam screenshot atas ni adalah scammer menggunakan storyline **Bantuan Rahmah Kerajaan**. Sama jugak method yang dia gunakan. Untuk check kelayakan kena login akaun telegram menggunakan pautan yang dia bagi dalam mesej tersebut.
+
+
+
 
 
