@@ -71,7 +71,7 @@ Domain details. Memang selalunya scammer akan guna lets Encrypt punya SSL sebab 
 
 Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indonesia. Kebarangkalian scammer ini berasal dari Indonesia, tapi anything can be, orang kita pun boleh buat perkara sama.
 
-# Kes 2 : Dalam IC ada duit
+# Kes 2 : Phishing | Dalam IC ada duit 😄
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png)
 
@@ -100,7 +100,7 @@ Dalam gambar di atas ni kita boleh lihat banyak website phishing yang telah diba
 
 Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing under domain wrmy6.com, fuhh 😅. Website phishing ni kalau kita view source dia, kesemuanya lebih kurang sama, dia hanya perlu sunting text dan gambar sahaja untuk menampakkan ianya legit dan cantik. 
 
-# Kes 3 : 
+# Kes 3 : Phishing | Bantuan Rahmah Kerajaan
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png" width="300" height="400" >
 
