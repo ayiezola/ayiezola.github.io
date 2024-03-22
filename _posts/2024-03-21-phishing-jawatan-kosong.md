@@ -56,11 +56,11 @@ Kalau kita view page source, kita akan dapat lihat ada satu part ada string pend
 
 Dalam red square tu kita nampak yang scammer ni hanya pinjam gambar dari website lain. 
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-022.png)
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-022.png" width="300" height="400" >
 
 Domain details. Memang selalunya scammer akan guna lets Encrypt punya SSL sebab ianya free. Setel part domain SSL
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-023.png)
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-023.png" width="300" height="400" >
 
 Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indonesia. Kebarangkalian scammer ini berasal dari Indonesia, tapi anything can be, orang kita pun boleh buat perkara sama.
 
