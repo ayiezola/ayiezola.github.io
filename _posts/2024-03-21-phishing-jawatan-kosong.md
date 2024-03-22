@@ -9,7 +9,7 @@ author: Ayiezola
 
 # Iklan Jawatan Kosong lead to Telegram Takeover
 
-[!IMPORTANT]
+> [!IMPORTANT]
 > Pernah tak tuanx / puanx dapat mesej dari rakan telegram anda untuk pinjam duit? Kejadian ini masih lagi aktif berlaku pada masa sekarang ni. Scammer menggunakan method yang sama cuma storyline berbeza. Antaranya ialah bantuan STR, MyKasih, Dalam IC ada duit, Iklan jawatan kosong dan banyak lagi. Bagaimana ianya berlaku? Jom..
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png)
