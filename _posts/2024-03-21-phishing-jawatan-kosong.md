@@ -102,7 +102,7 @@ Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing und
 
 # Kes 3 : 
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png)
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png" width="300" height="400" >
 
 > [!NOTE]
 > Dalam screenshot atas ni adalah scammer menggunakan storyline **Bantuan Rahmah Kerajaan**. Sama jugak method yang dia gunakan. Untuk check kelayakan kena login akaun telegram menggunakan pautan yang dia bagi dalam mesej tersebut.
@@ -113,7 +113,21 @@ Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing und
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-028.png)
 
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-029.png)
 
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-030.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-031.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-032.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-033.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-034.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-035.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-036.png)
 
 
 
