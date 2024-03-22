@@ -13,15 +13,15 @@ author: Ayiezola
 
 > Pernah tak tuanx / puanx dapat mesej dari rakan telegram anda untuk pinjam duit? Kejadian ini masih lagi aktif berlaku pada masa sekarang ni. Scammer menggunakan method yang sama cuma storyline berbeza. Antaranya ialah bantuan STR, MyKasih, Dalam IC ada duit, Iklan jawatan kosong dan banyak lagi. Bagaimana ianya berlaku? Jom..
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png)
 
 Gambar atas ni adalah screenshot iklan jawatan kosong dari halaman facebook pada salah satu page scammer.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png)
 
 Tuanx / puanx boleh lihat pada setiap komen pada posting iklan jawatan kosong tersebut. Begitu banyak individu yang tags kawan masing2. Kita dapat lihat bahawa scammer telah berjaya mengaburi mata pembaca. Misi scammer untuk spread iklan ni berjaya. Maksudnya scammer tak perlu lagi fikir macam mana nak hebahkan pautan phishing beliau.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png)
 
 Kita lihat pada jumlah share posting iklan ini, ianya mencecah 1.3K jumlah shares. Komen pula 456. Bagi scammer, ianya adalah satu kejayaan. Jumlah komen dan share ini akan memberi lebih point kepada phishing beliau untuk nampak lebih legit dan official.
 
@@ -30,28 +30,32 @@ Ini adalah pautan iklan tersebut :
 
 ## Jom buka pautan phishing tersebut
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-015.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-015.png)
 
 Selepas klik pautan phishing tersebut, kita akan landing ke satu website dimana terpapar iklan jawatan kosong pengambilan segera. Terdapat 2 form yang perlu diisi iaitu nama penuh dan nombor phone yang ada akaun telegram. Kemudian klik log masuk.
 
 {: .box-warning}
 Disini kita dapat lihat, nak daftar permohonan jawatan kosong kenapa perlu login akaun telegram? ianya satu perkara yang pelik.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-016.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-016.png)
 
 Halaman page seterusnya pula, kita dikehendaki untuk memasukkan OTP yang dihantar ke phone kita.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-017.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-017.png)
 
 Halaman seterusnya pula kita dikehendaki untuk memasukkan password akaun telegram. Kemudian klik button log masuk.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-018.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-018.png)
 
 Paparan halaman seterusnya, tunggu 5 minit sambil mereka menyemak kelayakan kita. 🤯💩
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-019.png" width="1200" height="600" >
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-020.png" width="1200" height="600" >
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-021.png" width="1200" height="600" >
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-019.png)
+
+Kalau kita view page source, kita akan dapat lihat ada satu part ada string pendaftaran Selangkah Selangor.
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-020.png)
+
+Dalam red square tu kita nampak yang scammer ni hanya pinjam gambar dari website lain. 
 
 # Dalam IC ada duit
 
