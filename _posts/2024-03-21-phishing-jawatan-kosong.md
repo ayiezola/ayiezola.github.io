@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Phishing Iklan Jawatan Kosong
+title: Phishing Yang Viral
 subtitle: Telegram Account Takeover
 tags: [phishing]
 comments: false
 author: Ayiezola
 ---
 
-# Iklan Jawatan Kosong lead to Telegram Takeover
+# Kes 1 : Iklan Jawatan Kosong lead to Telegram Takeover
 
 > [!IMPORTANT]
 > Pernah tak tuanx / puanx dapat mesej dari rakan telegram anda untuk pinjam duit? Kejadian ini masih lagi aktif berlaku pada masa sekarang ni. Scammer menggunakan method yang sama cuma storyline berbeza. Antaranya ialah bantuan STR, MyKasih, Dalam IC ada duit, Iklan jawatan kosong dan banyak lagi. Bagaimana ianya berlaku? Jom..
@@ -50,7 +50,7 @@ Paparan halaman seterusnya, tunggu 5 minit sambil mereka menyemak kelayakan kita
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-019.png)
 
-Kalau kita view page source, kita akan dapat lihat ada satu part ada string pendaftaran Selangkah Selangor.
+Kalau kita view page source, kita akan dapat lihat ada satu part ada string pendaftaran Selangkah Selangor. Why Selangkah plak ni? 😄
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-020.png)
 
@@ -58,9 +58,13 @@ Dalam red square tu kita nampak yang scammer ni hanya pinjam gambar dari website
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-022.png)
 
+Domain details. Memang selalunya scammer akan guna lets Encrypt punya SSL sebab ianya free. Setel part domain SSL
+
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-023.png)
 
-# Dalam IC ada duit
+Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indonesia. Kebarangkalian scammer ini berasal dari Indonesia, tapi anything can be, orang kita pun boleh buat perkara sama.
+
+# Kes 2 : Dalam IC ada duit
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png)
 
