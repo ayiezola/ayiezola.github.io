@@ -15,11 +15,15 @@ author: Ayiezola
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png" width="1200" height="600" >
 
-Ni adalah screenshot dari halaman facebook pada salah satu page scammer.
+Gambar atas ni adalah screenshot iklan jawatan kosong dari halaman facebook pada salah satu page scammer.
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png" width="1200" height="600" >
 
+Tuanx / puanx boleh lihat pada setiap komen pada posting iklan jawatan kosong tersebut. Begitu banyak individu yang tags kawan masing2. Kita dapat lihat bahawa scammer telah berjaya mengaburi mata pembaca. Misi scammer untuk spread iklan ni berjaya. Maksudnya scammer tak perlu lagi fikir macam mana nak hebahkan pautan phishing beliau.
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png" width="1200" height="600" >
+
+Kita lihat pada jumlah share posting iklan ini, ianya mencecah 1.3K jumlah shares. Komen pula 455. Bagi scammer, ianya adalah satu kejayaan. Jumlah komen dan share ini akan memberi lebih point kepada phishing beliau untuk nampak lebih legit dan official.
 
 Ini adalah pautan iklan tersebut : 
 [Link](https://www.facebook.com/permalink.php?story_fbid=pfbid02GbUZJwM4YEoc2EyCtGprGZYyduHovChw6UzA7zdG2XSboNbj538xTRubb8G9DwShl&id=61555579477341/).
