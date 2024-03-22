@@ -56,6 +56,10 @@ Kalau kita view page source, kita akan dapat lihat ada satu part ada string pend
 
 Dalam red square tu kita nampak yang scammer ni hanya pinjam gambar dari website lain. 
 
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-022.png)
+
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-023.png)
+
 # Dalam IC ada duit
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png)
