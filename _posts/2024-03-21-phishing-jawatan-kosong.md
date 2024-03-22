@@ -18,11 +18,13 @@ author: Ayiezola
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-003.png)
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-004.png)
+Imbasan terhadap domain yang scammer gunakan menunjukkan domain tersebut telah di senarai hitam.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-005.png)
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-006.png)
+
+Imbasan pada laman sesawang yang kedua pula menunjukkan domain tersebut telah redirect ke satu pautan lain.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-007.png)
 
