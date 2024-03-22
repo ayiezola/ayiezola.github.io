@@ -7,14 +7,20 @@ comments: false
 author: Ayiezola
 ---
 
-# Iklan Jawatan Kosong
+# Iklan Jawatan Kosong lead to Telegram Takeover
 
-> [!NOTE]
-> Dalam screenshot atas ni kita dapat lihat cubaan scammer menipu dengan mengatakan dalam ic ada duit 💩.
+## Observation
+
+> Pernah tak tuanx / puanx dapat mesej dari rakan telegram anda untuk pinjam duit? Kejadian ini masih lagi aktif berlaku pada masa sekarang ni. Scammer menggunakan method yang sama cuma storyline berbeza. Antaranya ialah bantuan STR, MyKasih, Dalam IC ada duit, Iklan jawatan kosong dan banyak lagi. Bagaimana ianya berlaku? Jom..
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png" width="1200" height="600" >
+
+Ni adalah screenshot dari halaman facebook pada salah satu page scammer.
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-013.png" width="1200" height="600" >
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-014.png" width="1200" height="600" >
+
 Ini adalah pautan iklan tersebut : 
 [Link](https://www.facebook.com/permalink.php?story_fbid=pfbid02GbUZJwM4YEoc2EyCtGprGZYyduHovChw6UzA7zdG2XSboNbj538xTRubb8G9DwShl&id=61555579477341/).
 
