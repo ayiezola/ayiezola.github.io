@@ -135,10 +135,12 @@ Domain bantuanrahmahkerajaan.my.id ni didaftarkan under domain ID PANDI.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-036.png)
 
+{: .box-warning}
 Selesai report domain bantuanrahmahkerajaan.my.id
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-032.png)
 
+{: .box-warning}
 Report to google
 
 # Report Telegram Account
@@ -147,6 +149,6 @@ Report to google
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-039.png)
 
-{: .box-information}
+{: .box-note}
 Analisis ini tidaklah terlalu deep, mostly basic je. Saya tak reti sangat. Semoga artikel ini berguna untuk anda & family. Boleh share. Paling risau kalau perkara ni berlaku pada ibu ayah kita. Aidilfitri makin dekat, takut scammer pun busy dengan modus operandi seterusnya.
 
