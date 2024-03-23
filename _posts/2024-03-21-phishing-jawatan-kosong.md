@@ -143,7 +143,7 @@ Report to google
 
 # Report Telegram Account
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-039.png)
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-038.png)
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-039.png)
 
