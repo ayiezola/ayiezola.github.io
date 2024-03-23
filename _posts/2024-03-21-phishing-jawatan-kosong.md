@@ -84,17 +84,17 @@ Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indone
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-010.png)
 
-Imbasan terhadap domain yang scammer gunakan menunjukkan domain tersebut telah di senarai hitam.
+Dalam kedua-dua screenshot di atas ni, scammer wrap actual pishing link dengan link shortener. (redr.me & bitly.ws). Imbasan terhadap domain yang scammer gunakan menunjukkan domain tersebut telah di senarai hitam.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-005.png)
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-006.png)
 
-Imbasan pada laman sesawang yang kedua pula menunjukkan domain tersebut telah redirect ke satu pautan lain.
+Imbasan pada laman sesawang yang kedua pula menunjukkan domain tersebut telah redirect ke satu pautan lain (Actual phishing link).
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-009.png)
 
-Dalam gambar di atas ni kita boleh lihat banyak website phishing yang telah dibangunkan untuk tujuan money scam under domain wrmy6.com
+Dalam gambar di atas ni kita boleh lihat senarai subdomain under domain yang sama. Banyak website phishing yang telah dibangunkan untuk tujuan money scam.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-011.png)
 
@@ -102,20 +102,28 @@ Gambar di atas menunjukkan hasil tangkap layar pada kesemua website phishing und
 
 # Kes 3 : Phishing | Bantuan Rahmah Kerajaan
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png" width="300" height="400" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-024.png" width="350" height="500" >
 
 > [!NOTE]
 > Dalam screenshot atas ni adalah scammer menggunakan storyline **Bantuan Rahmah Kerajaan**. Sama jugak method yang dia gunakan. Untuk check kelayakan kena login akaun telegram menggunakan pautan yang dia bagi dalam mesej tersebut.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-026.png)
 
+Web phishing yang ini pula kita lihat sama je design dengan yang sebelum ni. Hanya gambar dan tajuk yang berubah. Yang lain sama. Masih lagi perlu login telegram untuk menyemak kelayakan.
+
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-027.png)
+
+Gambar atas ni pulak adalah screenshot of phishing page by domain. Banyakkan? 😃
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-028.png)
 
+Senarai domain yang didaftar di bawah domain ID yang sama.
+
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-029.png)
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-030.png)
+Godek-godek ada jumpa beberapa nama pelajar.
+
+
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-031.png)
 
