@@ -71,6 +71,10 @@ Domain details. Memang selalunya scammer akan guna lets Encrypt punya SSL sebab 
 
 Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indonesia. Kebarangkalian scammer ini berasal dari Indonesia, tapi anything can be, orang kita pun boleh buat perkara sama.
 
+![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-040.png)
+
+Senarai subdomain under semakan-status.info (Semuanya phishing page)
+
 # Kes 2 : Phishing | Dalam IC ada duit 😄
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png" width="450" height="600" >
