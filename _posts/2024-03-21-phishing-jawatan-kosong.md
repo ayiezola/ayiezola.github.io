@@ -80,9 +80,9 @@ Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indone
 > [!NOTE]
 > Dalam screenshot atas ni kita dapat lihat cubaan scammer menipu dengan mengatakan dalam ic ada duit 💩.
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-003.png)
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-003.png" width="300" height="400" >
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-010.png)
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-010.png" width="300" height="100" >
 
 Imbasan terhadap domain yang scammer gunakan menunjukkan domain tersebut telah di senarai hitam.
 
