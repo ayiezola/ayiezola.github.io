@@ -9,10 +9,10 @@ author: Ayiezola
 
 # Kes 1 : Iklan Jawatan Kosong lead to Telegram Takeover
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-025.png" width="300" height="400" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-025.png" width="300" height="500" >
 
 > [!IMPORTANT]
-> Cuba lihat gambar di atas, pernah tak tuanx / puanx dapat mesej macam ini dari rakan telegram anda untuk pinjam duit? Kejadian ini masih lagi aktif berlaku pada masa sekarang ni. Ramai yang telah menjadi mangsa penipuan ini. Ada yang mengalami kerugian hampir puluh ribu. Scammer menggunakan method yang sama cuma storyline berbeza. Antaranya ialah bantuan STR, MyKasih, Dalam IC ada duit, Iklan jawatan kosong dan banyak lagi. **Kita perlu ambil tahu dan diharapkan artikel ini dikongsikan kepada ahli keluarga kita agar dapat mengelak dari menjadi mangsa seterusnya**. Bagaimana ianya berlaku? Jom..
+> Cuba lihat gambar di atas, pernah tak tuanx / puanx dapat mesej macam ini dari rakan telegram anda untuk pinjam duit? Kejadian ini masih lagi aktif berlaku pada masa sekarang ni. Ramai yang telah menjadi mangsa penipuan ini. Ada yang mengalami kerugian hampir puluh ribu. Scammer menggunakan method yang sama cuma storyline berbeza. Antaranya ialah bantuan STR, MyKasih, Dalam IC ada duit, Iklan jawatan kosong dan banyak lagi. **Kita perlu ambil tahu dan diharapkan artikel ini dikongsikan kepada ahli keluarga kita agar dapat mengelak dari menjadi mangsa seterusnya**. Bagaimana ianya berlaku? Yuk scroll..
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png)
 
@@ -50,10 +50,10 @@ Halaman seterusnya pula kita dikehendaki untuk memasukkan password akaun telegra
 
 Paparan halaman seterusnya, tunggu 5 minit sambil mereka menyemak kelayakan kita. 🤯💩 Masa ini semua details dah ada pada scammer; Nama, Phone Number, OTP dan Password account telegram. Tiba masa untuk scammer mendapatkan access / takeover akaun telegram kita. 
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-025.png" width="300" height="400" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-025.png" width="300" height="500" >
 
 > [!CAUTION]
-> Tatkala inilah objektif utama phishing ini akan dijalankan. Scammer ini kemudiannya akan menggunakan teknik Social Enginering, beliau akan DM rakan-rakan telegram kita untuk pinjam duit. Kita pula mungkin tidak akan syak apa-apa memandangkan meseg itu adalah dari kenalan kita.
+> Tatkala inilah objektif utama phishing ini akan dijalankan. Scammer ini kemudiannya akan menggunakan teknik Social Enginering, dengan menggunakan akaun telegram kita yang telah di takeover, beliau akan DM setiap rakan-rakan telegram kita untuk pinjam duit. Rakan kita pula mungkin tidak akan syak apa-apa memandangkan meseg itu adalah dari kita sendiri.
 
 ![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-019.png)
 
