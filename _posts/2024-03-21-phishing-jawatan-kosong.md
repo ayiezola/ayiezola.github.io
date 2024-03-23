@@ -73,9 +73,9 @@ Screenshot ini pula menunjukkan domain tersebut didaftarkan oleh Rumahweb Indone
 
 # Kes 2 : Phishing | Dalam IC ada duit 😄
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png" width="300" height="400" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-001.png" width="350" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-021.png" width="300" height="100" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-021.png" width="350" height="150" >
 
 > [!NOTE]
 > Dalam screenshot atas ni kita dapat lihat cubaan scammer menipu dengan mengatakan dalam ic ada duit 💩.
