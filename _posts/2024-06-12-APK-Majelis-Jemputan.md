@@ -7,31 +7,38 @@ comments: false
 author: Ayiezola
 ---
 
-# Kes 1 : Iklan Jawatan Kosong lead to Telegram Takeover
+# Non-technical Executive Summary
 
-<img src="image link" width="300" height="500" >
+# Technical Executive Summary
 
-> [!IMPORTANT]
->  Yuk scroll..
+# How threat actors distributed the malware
 
-![Scan redir](https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing/malware-link-012.png)
+# Graph Flow
 
-Ini adalah pautan iklan tersebut : 
-[Link](https://www.facebook.com/permalink.php?story_fbid=pfbid02GbUZJwM4YEoc2EyCtGprGZYyduHovChw6UzA7zdG2XSboNbj538xTRubb8G9DwShl&id=61555579477341/).
+## Technical Analysis
 
-## Jom buka pautan phishing tersebut
+### APK metadata information
 
-{: .box-warning}
-Disini kita dapat lihat, nak daftar permohonan jawatan kosong kenapa perlu login akaun telegram? ianya satu perkara yang pelik.
+Application name: SURAT JEMPUTAN
+Package Name: com.scs.whatsbulk
+MD5: e93420ff1fcd35e17b2dc7a4dc7667c3
+SHA1: 1f43eccbaa3abe21641185e025deed604a525aec
+SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
-> [!CAUTION]
-> Tatkala kita sendiri.
+### Application behavior and interface
 
-> [!NOTE]
-> Dalam screenshot atas ni adalah scammer menggunakan storyline **Bantuan Rahmah Kerajaan**. Sama jugak method yang dia gunakan. Untuk check kelayakan kena login akaun telegram menggunakan pautan yang dia bagi dalam mesej tersebut.
+## Malicious capabilities
 
-{: .box-warning}
-Report to google
+### Get device information
 
-{: .box-note}
-Analisis.
+### SMS stealer
+
+### Observation
+
+# Recommendation
+
+## Prevention
+
+## Indicator of Compromises
+
+### MD5 Hash
