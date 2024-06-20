@@ -28,9 +28,13 @@ We can see that the chain of this attack is threat actor using Social Engineerin
 ### APK metadata information
 
 Application name: SURAT JEMPUTAN
+
 Package Name: com.scs.whatsbulk
+
 MD5: e93420ff1fcd35e17b2dc7a4dc7667c3
+
 SHA1: 1f43eccbaa3abe21641185e025deed604a525aec
+
 SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
 ### Application Behavior
