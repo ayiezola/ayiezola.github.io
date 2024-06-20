@@ -7,7 +7,7 @@ comments: false
 author: Ayiezola
 ---
 
-Introduction
+# Introduction
 
 Last year, we are seldomly heard about scammer actively attack Malaysian with Telegram Take Over. Base on the previous attack flow, the perpetrator use phishing link to lure victim to enter their telegram credentials then after few second, perpetrator will trying to take over victim telegram account with the information they have. Nowdays, the threat actor has changed their method by using android Android Package Kit (APK) with the same objective.
 
@@ -37,7 +37,7 @@ SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
 
 
-## Malicious capabilities
+# Malicious capabilities
 
 ### Get device information
 
