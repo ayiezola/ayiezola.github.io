@@ -69,27 +69,27 @@ SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="300" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-abuse-permision.png" width="300" height="600" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-abuse-permision.png" width="" height="" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-access-call-log.jpeg" width="300" height="600" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-access-contact.jpeg" width="300" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-anti-vm.png" width="300" height="600" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-anti-vm.png" width="" height="" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-app-approach.png" width="300" height="600" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-asktoinstall.png" width="300" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-check-phone.png" width="300" height="600" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-check-phone.png" width="" height="" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-cwe.png" width="300" height="600" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-cwe.png" width="" height="" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-google-protect.png" width="300" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-hardcoded.png" width="300" height="600" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-hardcoded.png" width="" height="" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-indo-slang.png" width="300" height="600" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-indo-slang.png" width="" height="" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-installed.png" width="300" height="600" >
 
