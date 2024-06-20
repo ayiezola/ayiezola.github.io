@@ -17,8 +17,7 @@ In order to spy sms, phone call log, grabbing victims contact, threat actor has 
 
 # How threat actors distributed the malware
 
-<img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/scammer/app-scam-spread01.png" width="300" height="600" />
-<img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/scammer/app-scam-spread02.png" width="300" height="600" />
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-spread01.png" width="300" height="600" /> <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-spread02.png" width="300" height="600" />
 
 We can see that the chain of this attack is threat actor using Social Engineering (SE) technic to spread the Malicous APK. Threat Actor or Scammer will be spread their malicious APK through victim's contact base on previous compromised. Few victims have received a message contains "Jemputan Majlis Perkahwinan" attached with APK named MAJELIS_JEMPUTAN.apk. The contains of messages also told victim to install the APK to see the event details. At this point, victim believe the invitation is valid because it come from their contact and keen to know the important date, details of the event.
 
