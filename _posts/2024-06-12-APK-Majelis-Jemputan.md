@@ -71,7 +71,11 @@ Whatsbulk is package name for this malicious APK. In this picture above, we can 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-getdevice-info.png" width="" height="" >
 
+Look at picture above, at the first code block, this application attempts to request the permision declare in AndroidManifest file.
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-check-phone.png" width="" height="" >
+
+This code will manage SMS content string or SMS format about device specific information in order to send message to attacker C2 by using telegram API.
 
 ### Get Battery Status
 
