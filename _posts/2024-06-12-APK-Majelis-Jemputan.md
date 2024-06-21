@@ -143,7 +143,7 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-02.png" width="300" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="150" height="150" >
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="200" height="200" >
 
 # Recommendation
 
