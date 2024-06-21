@@ -53,8 +53,6 @@ SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
 During installation process, we observe that Google Play Protect has notify that APK will harmful victim's device. To continue this analysis, we just click 'Got it'.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-access-while-install.png" width="" height="" >
-
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-asktoinstall1.png" width="300" height="600" >
 
 Once again, a windows pop-up asking whether to proceed the installation or not. We click 'Install'
@@ -68,8 +66,6 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-read-sms.jpeg" width="300" height="600" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-installed.png" width="300" height="600" >
-
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-permision.png" width="" height="" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-app-approach.png" width="300" height="600" >
 
@@ -121,6 +117,10 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-severity.png" width="" height="" >
 
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-permision.png" width="" height="" >
+
+Picture above show us about manifest analysis. This result gto from recompiled APK that didnt has any protection.
+
 ## APK Sign Information
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-signed.png" width="" height="" >
@@ -139,11 +139,11 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-enter-phone-no.png" width="300" height="600" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" >
-
 ### Received Notification
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-replicate-01.png" width="" height="" >
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" >
 
 ### Received OTP
 
@@ -159,7 +159,10 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 ### MD5 Hash
 
+
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-hardcoded.png" width="" height="" >
 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-sendata.png" width="" height="" >
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-access-while-install.png" width="" height="" >
