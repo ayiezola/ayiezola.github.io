@@ -51,13 +51,19 @@ SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-abuse-permision.png" width="" height="" >
 
+From the picture above, we can see this APK file has five dangerous malware permision that are required to make it run perfectly. One of the interesting part is permision.WAKE_LOCK and permision.RECEIVE_BOOT_COMPLETED. This permision will allow the malicious APK to execute command before device sleep. Another one is permision to execute command after device completely boot.
+
 ### Manifest File
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-manifest.png" width="" height="" >
 
+AndroidManifest file is a root element for android application. If we look at this picture above, it give us initial information about the application permision, version, package name. For this malicious APK, we have 10 abnormal permision request while perform installing process.
+
 ### Application Package
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-package.png" width="" height="" >
+
+Whatsbulk is package name for this malicious APK. In this picture above, we can see there is 10 java file under Whatsbulk Folder. Of course we will explore the behaviour of the java code.
 
 ## Malicious capabilities
 
