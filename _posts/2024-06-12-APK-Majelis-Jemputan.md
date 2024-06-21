@@ -97,15 +97,21 @@ Third code block will retrieve sender phone number also subscription ID from ext
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call.png" width="" height="" >
 
-### Anti VM
+This code will monitor for caller phone number also check if call is not ringing or caller phone number is NULL, the it will do nothing. It also check for Subscription ID from which SIM slot. Then all the information will be enqueuing to be send to attacker C2.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-anti-vm.png" width="" height="" >
-
-### Notify Attacker
+### Successfully Install & Notify Attacker
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-notify-infection.png" width="" height="" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-send-phone-number.png" width="" height="" >
+Code above will check if the next button is clicked, then update MainActivity with victim phone number. Call SendIntro to execute notification to attacker. Start MainActivity then mark first setup has complete.
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-firstsetup-notify.png" width="" height="" >
+
+
+
+### Anti VM
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-anti-vm.png" width="" height="" >
 
 ### Observation
 
