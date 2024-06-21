@@ -107,7 +107,7 @@ Code above will check if the next button is clicked, then update MainActivity wi
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-firstsetup-notify.png" width="" height="" >
 
-
+Notify attacker after first setup has been success using telegram API.
 
 ### Anti VM
 
