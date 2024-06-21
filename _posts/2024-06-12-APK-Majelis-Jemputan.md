@@ -87,6 +87,12 @@ At this point, we can see from the code above the application will gather inform
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-sms.png" width="" height="" >
 
+This code above is about to monitor incoming SMS received by victims. We know that scammer are really waiting for the OTP code to proceed further malicious action. The first code under function SMSMonitor is about the extract SMS Data messages then it will initializes an array SmsMessage Objects.
+
+Second code block will combines all the string to form a complete text messages.
+
+Third code block will retrieve sender phone number also subscription ID from extras. Then last code block will prepare input data and request network connectivity status CONNECTED.
+
 ### Monitor Call
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call.png" width="" height="" >
