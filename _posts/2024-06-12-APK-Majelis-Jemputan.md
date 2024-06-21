@@ -139,6 +139,8 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-enter-phone-no.png" width="300" height="600" >
 
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" >
+
 ### Received Notification
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-replicate-01.png" width="" height="" >
