@@ -77,9 +77,11 @@ Look at picture above, at the first code block, this application attempts to req
 
 This code will manage SMS content string or SMS format about device specific information in order to send message to attacker C2 by using telegram API.
 
-### Get Battery Status
+### Get Battery Status, SIM Information & IMSI
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-getbattery-status.png" width="" height="" >
+
+At this point, we can see from the code above the application will gather information about the device battery status if it has permision READ_PHONE_STATE. It also check for SIM slot value and extract phone number. All this information will be send to attacker C2 as target information collection similar to log.
 
 ### Monitor SMS
 
