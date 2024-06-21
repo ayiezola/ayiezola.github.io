@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Malicious Attacker use MAJELIS_JEMPUTAN.apk to Scam 
+title: Beware!! Scammer use MAJELIS_JEMPUTAN.apk to generate money.
 subtitle: Targeted to Malaysian
 tags: [malicious apk]
 comments: false
