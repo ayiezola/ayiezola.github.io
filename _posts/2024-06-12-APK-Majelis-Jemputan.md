@@ -137,6 +137,10 @@ Picture above show us about manifest analysis. This result gto from recompiled A
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-cwe.png" width="" height="" >
 
+There is java file named SendIntro.java has been store sensitive information. That is attacker Telegram Bot API. 
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-chatid-api.png" width="" height="" >
+
 ## Developer Language
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-indo-slang.png" width="" height="" >
