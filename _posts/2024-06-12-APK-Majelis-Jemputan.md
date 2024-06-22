@@ -9,17 +9,17 @@ author: Ayiezola
 
 # Introduction
 
-Last year, we are seldomly heard about scammer actively attack Malaysian with Telegram Take Over. Base on the previous attack flow, the perpetrator use phishing link to lure victim to enter their telegram credentials then after few second, perpetrator will trying to take over victim telegram account with the information they have. Nowdays, the threat actor has changed their method by using android Android Package Kit (APK) with the same objective. This insident has been report by Malaysia news portal [Harian Metro](https://www.hmetro.com.my/mutakhir/2024/06/1096977/waspada-mesej-jemputan-kahwin-digital-guna-fail-apk).
+Last year, we heard about scammers actively attacking Malaysians through Telegram Takeovers. Based on previous attack patterns, perpetrators used phishing links to lure victims into entering their Telegram credentials. Then, within a few seconds, the perpetrators attempted to take over the victims' Telegram accounts using the information they obtained. Nowadays, the threat actors have changed their method by using Android Package Kits (APKs) with the same objective. This incident has been reported by the Malaysian news portal [Harian Metro](https://www.hmetro.com.my/mutakhir/2024/06/1096977/waspada-mesej-jemputan-kahwin-digital-guna-fail-apk).
 
 # Technical Summary
 
-In order to spy sms, phone call log, grabbing victims contact, threat actor has to plant their malicious APK in victim's device. After successfully installed, APK will establish a process called 'Surat Jemputan' will keep running and monitor any SMS, call log received by victim and forward to Commmand Control (C2) for the objective to take over telegram account nor whatsapp account also victim contact. This objective will only achieve if victim successfully installed their malicious APK. 
+To spy on SMS, phone call logs, and access victims' contacts, threat actors need to plant their malicious APK on the victim's device. Once successfully installed, the APK will establish a process called 'Surat Jemputan' that continuously runs, monitoring any SMS and call logs received by the victim. It then forwards this information to Command and Control (C2) with the objective of taking over the victim's Telegram or WhatsApp account, as well as accessing their contacts. This objective will only be achieved if the victim successfully installs the malicious APK. 
 
 # How threat actors distributed the malware
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-spread01.png" width="300" height="600" /> <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-spread02.png" width="300" height="600" /></p>
 
-We can see that the chain of this attack is threat actor using Social Engineering (SE) technic to spread the Malicous APK. Threat Actor or Scammer will be spread their malicious APK through victim's contact base on previous compromised. Few victims have received a message contains "Jemputan Majlis Perkahwinan" attached with APK named MAJELIS_JEMPUTAN.apk. The contains of messages also told victim to install the APK to see the event details. At this point, victim believe the invitation is valid because it come from their contact and keen to know the important date, details of the event.
+We can see that the chain of this attack involves threat actors using Social Engineering (SE) techniques to spread the malicious APK. Threat actors or scammers spread their malicious APK through the victim's contacts based on previous compromises. Some victims have received a message containing "Jemputan Majlis Perkahwinan" with an APK attachment named MAJELIS_JEMPUTAN.apk. The message content also instructs the victim to install the APK to see the event details. At this point, the victim believes the invitation is valid because it comes from their contact and is keen to know the important date and details of the event.
 
 # Graph Flow
 
@@ -51,19 +51,19 @@ SHA256: abb0b78b36044643e3a792e6db670d2fa7e31e3fa940eae518018c09e15a00f1
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-abuse-permision.png" width="" height="" >
 
-From the picture above, we can see this APK file has five dangerous malware permision that are required to make it run perfectly. One of the interesting part is permision.WAKE_LOCK and permision.RECEIVE_BOOT_COMPLETED. This permision will allow the malicious APK to execute command before device sleep. Another one is permision to execute command after device completely boot.
+From the picture above, we can see that this APK file requires five dangerous malware permissions to function properly. One of the interesting aspects is the permissions WAKE_LOCK and RECEIVE_BOOT_COMPLETED. These permissions allow the malicious APK to execute commands before the device goes to sleep and after the device has completely booted, respectively.
 
 ### Manifest File
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-manifest.png" width="" height="" >
 
-AndroidManifest file is a root element for android application. If we look at this picture above, it give us initial information about the application permision, version, package name. For this malicious APK, we have 10 abnormal permision request while perform installing process.
+The AndroidManifest file is a root element for an Android application. If we look at the picture above, it provides us with initial information about the application's permissions, version, and package name. For this malicious APK, there are 10 abnormal permission requests during the installation process.
 
 ### Application Package
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-package.png" width="" height="" ></p>
 
-Whatsbulk is package name for this malicious APK. In this picture above, we can see there is 10 java file under Whatsbulk Folder. Of course we will explore the behaviour of the java code.
+The package name for this malicious APK is Whatsbulk. In the picture above, we can see there are 10 Java files under the Whatsbulk folder. Yes of course, we will explore the behavior of the Java code.
 
 ## Malicious capabilities
 
@@ -81,23 +81,27 @@ This code will manage SMS content string or SMS format about device specific inf
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-getbattery-status.png" width="" height="" >
 
-At this point, we can see from the code above the application will gather information about the device battery status if it has permision READ_PHONE_STATE. It also check for SIM slot value and extract phone number. All this information will be send to attacker C2 as target information collection similar to log.
+At this point, we can see from the code above that the application will gather information about the device's battery status if it has the permission READ_PHONE_STATE. It also checks for the SIM slot value and extracts the phone number. All this information will be sent to the attacker’s C2 server for target information collection, similar to logging.
 
 ### Monitor SMS
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-sms.png" width="" height="" >
 
-This code above is about to monitor incoming SMS received by victims. We know that scammer are really waiting for the OTP code to proceed further malicious action. The first code under function SMSMonitor is about the extract SMS Data messages then it will initializes an array SmsMessage Objects.
+The code above is designed to monitor incoming SMS messages received by victims. We know that scammers are particularly interested in waiting for OTP codes to proceed with further malicious actions.
 
-Second code block will combines all the string to form a complete text messages.
+The first code block under the function SMSMonitor extracts SMS data messages and initializes an array of SmsMessage objects.
 
-Third code block will retrieve sender phone number also subscription ID from extras. Then last code block will prepare input data and request network connectivity status CONNECTED.
+The second code block combines all the strings to form a complete text message.
+
+The third code block retrieves the sender's phone number and the subscription ID from the extras.
+
+The final code block prepares the input data and requests the network connectivity status, indicating whether the device is CONNECTED.
 
 ### Monitor Call
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call.png" width="" height="" >
 
-This code will monitor for caller phone number also check if call is not ringing or caller phone number is NULL, the it will do nothing. It also check for Subscription ID from which SIM slot. Then all the information will be enqueuing to be send to attacker C2.
+This code monitors the caller's phone number and checks if the call is not ringing or if the caller's phone number is NULL; it will do nothing. Additionally, it checks the Subscription ID to determine which SIM slot is being used. All this information is then queued to be sent to the attacker's C2 server.
 
 ### Successfully Install & Notify Attacker
 
@@ -123,7 +127,7 @@ From this picture above, our analysis tool has been detected this APK are compil
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-permision.png" width="" height="" >
 
-Picture above show us about manifest analysis. This result got from recompiled APK that didnt has any protection.
+The picture above shows us the manifest analysis results obtained from a recompiled APK that doesn't have any protection.
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-severity.png" width="" height="" >
 
@@ -143,17 +147,17 @@ There is java file named SendIntro.java has been store sensitive information. Th
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-indo-slang.png" width="" height="" >
 
-The text in the message string is in Indonesian Slang, so we can assume this APK is come from the same circle with the previous attack like [MyMaid APK](https://notes.netbytesec.com/2022/05/scam-and-malicious-apk-targeting.html), [Kad Kahwin Digital](https://notes.netbytesec.com/2023/06/kahwin-sms-stealer-target-Malaysia.html) also [MyPetronas](https://notes.netbytesec.com/2022/09/scam-android-app-steals-bank.html). NetByteSec Team has done their analysis with these APK. You can check this later for more information.
+The text in the message string is in Indonesian slang, suggesting that this APK may originate from the same group responsible for previous attacks such as [MyMaid APK](https://notes.netbytesec.com/2022/05/scam-and-malicious-apk-targeting.html), [Kad Kahwin Digital](https://notes.netbytesec.com/2023/06/kahwin-sms-stealer-target-Malaysia.html) also [MyPetronas](https://notes.netbytesec.com/2022/09/scam-android-app-steals-bank.html). NThe NetByteSec Team has conducted analyses on these APKs, providing more information that you can check later for further details.
 
 ## Dry Run
 
-To achieve a clear picture of this attack flow, we have to run this APK in our Lab environment. 
+To gain a clear understanding of this attack flow, we need to execute this APK in our laboratory environment. 
 
 ### Installation
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-google-protect.png" width="300" height="600" ></p>
 
-During installation process, we observe that Google Play Protect has notify that APK will harmful victim's device. To continue this analysis, we just click 'Got it'.
+During the installation process, we observed that Google Play Protect notified us that the APK could harm the victim's device. To proceed with our analysis, we simply clicked 'Got it'.
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-asktoinstall1.png" width="300" height="600" ></p>
 
@@ -165,13 +169,13 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-installed.png" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-app-approach.png" width="300" height="600" ></p>
 
-During installation process, we notices this application will pop-up a windows for each permision request. Phone call logs, access contacts, manage phone calls and permision to view and send messages. It's crucial to be aware about all of these permisions request from any APK we are trying to install. This is the top malware permision that can compromise our security and privacy.
+During the installation process, we noticed that this application will prompt a window for each permission request. These include permissions to access phone call logs, contacts, manage phone calls, and view/send messages. It's crucial to be aware of all these permission requests from any APK we attempt to install. These permissions represent top malware risks that can compromise our security and privacy.
 
 ### Enter Phone Number
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-enter-phone-no.png" width="300" height="600" ></p>p
 
-Once successfully install, a window form pop-up and we have to enter our phone number. We decide to use temporary phone number just to understand how this attack flow going.
+Once successfully installed, a popup window appeared prompting us to enter our phone number. We decided to use a temporary phone number just to understand how this attack flow progresses.
 
 ### Received OTP
 
@@ -179,13 +183,11 @@ Once successfully install, a window form pop-up and we have to enter our phone n
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="250" height="250" ></p>
 
-A few minute later, we observe that our testing phone has receive OTP code for whatsapp registration. A windows message has prompt saying that whatsapp registration code has been request. We also received a SMS with OTP code for WhatsApp registration on a new device.
+A few minutes later, we observed that our testing phone received an OTP code for WhatsApp registration. A message window popped up indicating that a WhatsApp registration code had been requested. Additionally, we received an SMS containing the OTP code for WhatsApp registration on a new device.
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-shopeepay.jpeg" width="250" height="250" ></p>
 
-We also received OTP code for shopeepay registration. Both of this messages are clearly using Indonesian slang. 
-
-Base on this analysis, we decided to replicate this APK and setup our own C2 using telegram Bot API. To make it work, we have to setup new telegram Bot, telegram API key and Telegram Chat ID. After everything look fine and ready, we start to install that APK into a testing phone. We manage to send SMS and make a call.
+Based on this analysis, we decided to replicate this APK and set up our own C2 using the Telegram Bot API. To make it operational, we set up a new Telegram bot, obtained a Telegram API key, and identified a Telegram Chat ID. Once everything was set up and ready, we proceeded to install the APK on a testing phone. We successfully sent SMS messages and made calls through the testing device.
 
 ### Received Notification
 
@@ -193,13 +195,13 @@ Base on this analysis, we decided to replicate this APK and setup our own C2 usi
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" ></p>
 
-Looking at picture above, our C2 have receive notifications containing information as discussed at the beginning of this analysis like device model, Telco, caller phone number, text message, SMS sender phoner number and battery status.
+Looking at the picture above, our C2 received notifications containing information discussed at the beginning of this analysis, such as device model, telecom provider, caller phone number, text messages, SMS sender phone number, and battery status.
 
 ## Recommendation & Prevention
 
-This attack are active from previous year and it become wellknown. We recommend all family members that received this awareness need to spread to their parents. Threat actor will be everywhere and everyone can be their victim. The important thing is we have to know what we download and install in our device. Please download application that come from google play or official/trusted website. Kindly update application to the latest version. 
+This attack has been active since the previous year and has gained notoriety. We recommend that all family members who receive this awareness spread it to their parents. Threat actors are everywhere, and anyone can become their victim. It's crucial to be mindful of what we download and install on our devices. Please download applications only from Google Play or official/trusted websites, and regularly update applications to the latest versions.
 
-If you have installed this malicious APK, please diconnect your network and uninstall it. Check which and what service are running on your device. Also check application properties. 
+If you have installed this malicious APK, please disconnect your network and uninstall it immediately. Check which services are running on your device and review application properties thoroughly.
 
 ## Indicator of Compromises
 
