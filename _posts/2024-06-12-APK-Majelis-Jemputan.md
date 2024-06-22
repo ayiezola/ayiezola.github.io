@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Beware!! Scammer use MAJELIS_JEMPUTAN.apk to generate money.
-subtitle: Targeted to Malaysian
+title: Scammer use MAJELIS_JEMPUTAN.apk to generate money.
+subtitle: Analysis & Explaination
 tags: [malicious apk]
 comments: false
 author: Ayiezola
