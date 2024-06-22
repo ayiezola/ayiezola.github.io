@@ -191,7 +191,7 @@ Base on this analysis, we decided to replicate this APK and setup our own C2 usi
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-replicate-01.png" width="" height="" ></p>
 
-<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify" width="" height="" ></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" ></p>
 
 Looking at picture above, our C2 have receive notifications containing information as discussed at the beginning of this analysis like device model, Telco, caller phone number, text message, SMS sender phoner number and battery status.
 
