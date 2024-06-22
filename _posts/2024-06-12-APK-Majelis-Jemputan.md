@@ -143,7 +143,7 @@ There is java file named SendIntro.java has been store sensitive information. Th
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-indo-slang.png" width="" height="" >
 
-The text in the message string is in Indo Slang, so we can assume this APK is come from the same circle with the previous attack like [MyMaid APK](https://notes.netbytesec.com/2022/05/scam-and-malicious-apk-targeting.html), [Kad Kahwin Digital](https://notes.netbytesec.com/2023/06/kahwin-sms-stealer-target-Malaysia.html) also [MyPetronas](https://notes.netbytesec.com/2022/09/scam-android-app-steals-bank.html). NetByteSec Team has done their analysis with these APK. You can check this later for more information.
+The text in the message string is in Indonesian Slang, so we can assume this APK is come from the same circle with the previous attack like [MyMaid APK](https://notes.netbytesec.com/2022/05/scam-and-malicious-apk-targeting.html), [Kad Kahwin Digital](https://notes.netbytesec.com/2023/06/kahwin-sms-stealer-target-Malaysia.html) also [MyPetronas](https://notes.netbytesec.com/2022/09/scam-android-app-steals-bank.html). NetByteSec Team has done their analysis with these APK. You can check this later for more information.
 
 ## Dry Run
 
@@ -181,11 +181,19 @@ Once successfully install, a window form pop-up and we have to enter our phone n
 
 A few minute later, we observe that our testing phone has receive OTP code for whatsapp registration. A windows message has prompt saying that whatsapp registration code has been request. We also received a SMS with OTP code for WhatsApp registration on a new device.
 
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-shopeepay.jpeg" width="250" height="250" ></p>
+
+We also received OTP code for shopeepay registration. Both of this messages are clearly using Indonesian slang. 
+
+Base on this analysis, we decided to replicate this APK and setup our own C2 using telegram Bot API. To make it work, we have to setup new telegram Bot, telegram API key and Telegram Chat ID. After everything look fine and ready, we start to install that APK into a testing phone. We manage to send SMS and make a call.
+
 ### Received Notification
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-replicate-01.png" width="" height="" >
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" >
+
+Looking at picture above, our C2 have receive notifications containing information as discussed at the beginning of this analysis like device model, Telco, caller phone number, text message, SMS sender phoner number and battery status.
 
 # Recommendation
 
