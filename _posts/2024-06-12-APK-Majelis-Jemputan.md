@@ -109,8 +109,6 @@ Code above will check if the next button is clicked, then update MainActivity wi
 
 Function above will notify attacker after first setup has been successfully install in victim device. Attacker will be notify right after this process has been done using telegram API.
 
-The text in the message string is in Indo Slang, so we can assume this APK is come from the same circle with the previous attack like [MyMaid APK](https://notes.netbytesec.com/2022/05/scam-and-malicious-apk-targeting.html), [Kad Kahwin Digital](https://notes.netbytesec.com/2023/06/kahwin-sms-stealer-target-Malaysia.html) also [MyPetronas](https://notes.netbytesec.com/2022/09/scam-android-app-steals-bank.html). NetByteSec Team has done their analysis with these APK. You can check this later for more information.
-
 ### Anti VM
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-anti-vm.png" width="" height="" >
@@ -125,7 +123,7 @@ From this picture above, our analysis tool has been detected this APK are compil
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-permision.png" width="" height="" >
 
-Picture above show us about manifest analysis. This result gto from recompiled APK that didnt has any protection.
+Picture above show us about manifest analysis. This result got from recompiled APK that didnt has any protection.
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-severity.png" width="" height="" >
 
@@ -145,7 +143,11 @@ There is java file named SendIntro.java has been store sensitive information. Th
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-indo-slang.png" width="" height="" >
 
+The text in the message string is in Indo Slang, so we can assume this APK is come from the same circle with the previous attack like [MyMaid APK](https://notes.netbytesec.com/2022/05/scam-and-malicious-apk-targeting.html), [Kad Kahwin Digital](https://notes.netbytesec.com/2023/06/kahwin-sms-stealer-target-Malaysia.html) also [MyPetronas](https://notes.netbytesec.com/2022/09/scam-android-app-steals-bank.html). NetByteSec Team has done their analysis with these APK. You can check this later for more information.
+
 ## Dry Run
+
+To achieve a clear picture of this attack flow, we have to run this APK in our Lab environment.
 
 ### Installation
 
