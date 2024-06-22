@@ -147,7 +147,7 @@ The text in the message string is in Indo Slang, so we can assume this APK is co
 
 ## Dry Run
 
-To achieve a clear picture of this attack flow, we have to run this APK in our Lab environment.
+To achieve a clear picture of this attack flow, we have to run this APK in our Lab environment. 
 
 ### Installation
 
@@ -165,21 +165,27 @@ Once again, a windows pop-up asking whether to proceed the installation or not. 
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-installed.png" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-app-approach.png" width="300" height="600" >
 
+During installation process, we notices this application will pop-up a windows for each permision request. Phone call logs, access contacts, manage phone calls and permision to view and send messages. It's crucial to be aware about all of these permisions request from any APK we are trying to install. This is the top malware permision that can compromise our security and privacy.
+
 ### Enter Phone Number
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-enter-phone-no.png" width="300" height="600" >
 
-### Received Notification
-
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-replicate-01.png" width="" height="" >
-
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" >
+Once successfully install, a window form pop-up and we have to enter our phone number. We decide to use temporary phone number just to understand how this attack flow going.
 
 ### Received OTP
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-02.png" width="300" height="600" >
 
 <p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="250" height="250" ></p>
+
+A few minute later, we observe that our testing phone has receive OTP code for whatsapp registration. A windows message has prompt saying that whatsapp registration code has been request. We also received a SMS with OTP code for WhatsApp registration on a new device.
+
+### Received Notification
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-replicate-01.png" width="" height="" >
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-monitor-call-notify.png" width="" height="" >
 
 # Recommendation
 
