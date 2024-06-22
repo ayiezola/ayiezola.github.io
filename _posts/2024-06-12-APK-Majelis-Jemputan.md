@@ -121,11 +121,11 @@ From this picture above, our analysis tool has been detected this APK are compil
 
 ## Severity
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-severity.png" width="" height="" >
-
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-permision.png" width="" height="" >
 
 Picture above show us about manifest analysis. This result gto from recompiled APK that didnt has any protection.
+
+<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-severity.png" width="" height="" >
 
 ## APK Sign Information
 
