@@ -151,19 +151,19 @@ To achieve a clear picture of this attack flow, we have to run this APK in our L
 
 ### Installation
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-google-protect.png" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-google-protect.png" width="300" height="600" ></p>p
 
 During installation process, we observe that Google Play Protect has notify that APK will harmful victim's device. To continue this analysis, we just click 'Got it'.
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-asktoinstall1.png" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-asktoinstall1.png" width="300" height="600" ></p>p
 
 Once again, a windows pop-up asking whether to proceed the installation or not. We click 'Install'
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-access-call-log.jpeg" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-access-contact.jpeg" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-access-call-log.jpeg" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-access-contact.jpeg" width="300" height="600" ></p>
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-phone-call.jpeg" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-read-sms.jpeg" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-phone-call.jpeg" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-read-sms.jpeg" width="300" height="600" ></p>
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-installed.png" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-app-approach.png" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-installed.png" width="300" height="600" > <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-app-approach.png" width="300" height="600" ></p>
 
 During installation process, we notices this application will pop-up a windows for each permision request. Phone call logs, access contacts, manage phone calls and permision to view and send messages. It's crucial to be aware about all of these permisions request from any APK we are trying to install. This is the top malware permision that can compromise our security and privacy.
 
