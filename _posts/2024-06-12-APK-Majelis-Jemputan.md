@@ -9,7 +9,7 @@ author: Ayiezola
 
 # Introduction
 
-Last year, we are seldomly heard about scammer actively attack Malaysian with Telegram Take Over. Base on the previous attack flow, the perpetrator use phishing link to lure victim to enter their telegram credentials then after few second, perpetrator will trying to take over victim telegram account with the information they have. Nowdays, the threat actor has changed their method by using android Android Package Kit (APK) with the same objective.
+Last year, we are seldomly heard about scammer actively attack Malaysian with Telegram Take Over. Base on the previous attack flow, the perpetrator use phishing link to lure victim to enter their telegram credentials then after few second, perpetrator will trying to take over victim telegram account with the information they have. Nowdays, the threat actor has changed their method by using android Android Package Kit (APK) with the same objective. This insident has been report by Malaysia news portal [Harian Metro](https://www.hmetro.com.my/mutakhir/2024/06/1096977/waspada-mesej-jemputan-kahwin-digital-guna-fail-apk).
 
 # Technical Summary
 
@@ -195,16 +195,14 @@ Base on this analysis, we decided to replicate this APK and setup our own C2 usi
 
 Looking at picture above, our C2 have receive notifications containing information as discussed at the beginning of this analysis like device model, Telco, caller phone number, text message, SMS sender phoner number and battery status.
 
-# Recommendation
+## Recommendation & Prevention
 
-## Prevention
+This attack are active from previous year and it become wellknown. We recommend all family members that received this awareness need to spread to their parents. Threat actor will be everywhere and everyone can be their victim. The important thing is we have to know what we download and install in our device. Please download application that come from google play or official/trusted website. Kindly update application to the latest version. 
+
+If you have installed this malicious APK, please diconnect your network and uninstall it. Check which and what service are running on your device. Also check application properties. 
 
 ## Indicator of Compromises
 
 ### MD5 Hash
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-hardcoded.png" width="" height="" >
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-sendata.png" width="" height="" >
-
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-request-access-while-install.png" width="" height="" >
