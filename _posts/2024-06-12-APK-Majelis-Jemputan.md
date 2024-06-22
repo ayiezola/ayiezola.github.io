@@ -169,15 +169,15 @@ During installation process, we notices this application will pop-up a windows f
 
 ### Enter Phone Number
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-enter-phone-no.png" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-enter-phone-no.png" width="" height="" ></p>p
 
 Once successfully install, a window form pop-up and we have to enter our phone number. We decide to use temporary phone number just to understand how this attack flow going.
 
 ### Received OTP
 
-<img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-02.png" width="300" height="600" >
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-02.png" width="" height="" ></p>p
 
-<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="250" height="250" ></p>
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-03.jpeg" width="" height="" ></p>
 
 A few minute later, we observe that our testing phone has receive OTP code for whatsapp registration. A windows message has prompt saying that whatsapp registration code has been request. We also received a SMS with OTP code for WhatsApp registration on a new device.
 
