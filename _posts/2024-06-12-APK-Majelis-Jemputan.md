@@ -203,6 +203,10 @@ If you have installed this malicious APK, please diconnect your network and unin
 
 ## Indicator of Compromises
 
+Domain Contact: api.telegram.org
+
 ### MD5 Hash
+
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-apk-md5.png" width="250" height="250" ></p>
 
 
