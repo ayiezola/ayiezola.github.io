@@ -107,11 +107,15 @@ Code above will check if the next button is clicked, then update MainActivity wi
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-firstsetup-notify.png" width="" height="" >
 
-Notify attacker after first setup has been success using telegram API.
+Function above will notify attacker after first setup has been successfully install in victim device. Attacker will be notify right after this process has been done using telegram API.
 
 ### Anti VM
 
 <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-anti-vm.png" width="" height="" >
+
+From this picture above, our analysis tool has been detected this APK are compiled by dexlib 2.x
+
+> If any of the dexlib families have been used to create a DEX file, you can be fairly suspicious it has been cracked and it may have been injected with malware. For more info on how we used compiler fingerprinting to detect malware and cracks, check out our talk Android Compiler Fingerprinting.
 
 ### Observation
 
