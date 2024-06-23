@@ -23,7 +23,7 @@ We can see that the chain of this attack involves threat actors using Social Eng
 
 # Graph Flow
 
-Tunggu Sat!!
+<p align="center"><img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/scammer/app-scam-overview.png" width="" height="" ></p>
 
 ## Technical Analysis
 
