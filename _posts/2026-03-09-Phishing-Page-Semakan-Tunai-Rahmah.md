@@ -186,7 +186,7 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.comayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/refs/heads/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 19: Threat Actor Telegram Token Expose.</em>
 </p>
 
