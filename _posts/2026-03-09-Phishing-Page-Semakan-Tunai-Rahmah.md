@@ -71,21 +71,32 @@ The phishing flow transitions from simple data collection to an active account h
   <br><em>Figure 5: Form capturing victim's Telegram OTP.</em>
 </p>
 
----
-
-## 4. Technical Findings
-
-### Domain Infrastructure
-Using `whois` and DNS lookups, we identified the following:
-* **Registrar:** [PT Digital Registra Indonesia]
-* **CDN:** [Cloudflare]
-* **SSL Status:** Valid (Let's Encrypt), used to trick users into seeing the "Padlock" icon.
-
 ### Indicators of Compromise (IoCs)
 * **URL:** `https://bantuanstr.infopublic.my.id/e/`
 * **Name:** `[Insert Name]`
 * **Phone Number:** `[Insert Phone Number]`
 * **OTP:** `[Insert OTP]`
+
+---
+
+## 4. Technical Findings & Data Exfiltration
+
+### A. Infrastructure Recon
+Investigation of the domain `infopublic.my.id` revealed several technical red flags:
+* **Registrar:** PT Digital Registra Indonesia.
+* **Localization Errors:** Figure 6 shows the use of "Opsional," confirming an Indonesian origin for the phishing kit.
+* **Favicon Spoofing:** Figure 7 shows the TA pulling the official favicon directly from `hasil.gov.my` to enhance visual trust.
+
+### B. Server Misconfigurations (Content Exposure)
+Due to poor server hardening, several internal directories were exposed:
+* **Directory Indexing:** Figure 12 shows a full list of the phishing kit's files.
+* **CPanel & Robots.txt:** Access to these files (Figures 10 & 11) helped map the attacker's infrastructure.
+
+### C. The "Smoking Gun": Telegram Bot Interception
+The most significant find was the exposure of the **Telegram Bot Token** (Figure 19). Analysis of the bot traffic revealed:
+1. **NRIC & Phone Numbers:** Real-time harvesting of Malaysian citizen data.
+2. **OTP Interception:** Active Man-in-the-Middle attacks on Telegram accounts.
+3. **Collateral Damage:** The bot was also used to harvest **TikTok credentials** (Figure 26) and **private images** (Figure 23), suggesting a broader identity theft operation.
 
 ### Infrastructure Recon
 
