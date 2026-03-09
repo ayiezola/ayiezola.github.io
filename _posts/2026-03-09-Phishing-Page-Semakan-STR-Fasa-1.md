@@ -87,6 +87,7 @@ Using `whois` and DNS lookups, we identified the following:
 * **Phone Number:** `[Insert Phone Number]`
 * **OTP:** `[Insert OTP]`
 
+
 ---
 
 ## 5. Prevention & Reporting
@@ -200,4 +201,9 @@ Using `whois` and DNS lookups, we identified the following:
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-022.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 3: Path DATA Expose.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Threat Actor Telegram Token Expose.</em>
 </p>
