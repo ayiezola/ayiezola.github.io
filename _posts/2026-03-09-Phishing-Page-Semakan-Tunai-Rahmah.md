@@ -60,7 +60,7 @@ The TA may post fake testimonials or 'success' messages in the group to convince
 ### B. Data Harvest & Account Takeover Form
 The phishing flow transitions from simple data collection to an active account hijacking attempt:
 
-1. **Phone Number Collection:** The form first requests the victim's mobile phone number.
+1. **Phone Number Collection:** The form first requests the victim's name and mobile phone number.
 2. **Real-time Exploitation:** Once the number is submitted, the backend triggers a legitimate Telegram login request to the victim's device.
 3. **OTP Interception:** The victim is redirected to a second page prompting them to enter the OTP code sent to their Telegram account.
 
@@ -101,7 +101,7 @@ Due to poor server hardening, several internal directories were exposed:
 
 ### C. The "Smoking Gun": Telegram Bot Interception
 The most significant find was the exposure of the **Telegram Bot Token** (Figure 19). Analysis of the bot traffic revealed:
-1. **NRIC & Phone Numbers:** Real-time harvesting of Malaysian citizen data.
+1. **Name & Phone Numbers:** Real-time harvesting of Malaysian citizen data.
 2. **OTP Interception:** Active Man-in-the-Middle attacks on Telegram accounts.
 3. **Collateral Damage:** The bot was also used to harvest **TikTok credentials** (Figure 26) and **private images** (Figure 23), suggesting a broader identity theft operation.
 
