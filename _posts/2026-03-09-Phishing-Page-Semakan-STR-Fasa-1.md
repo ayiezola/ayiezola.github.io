@@ -135,7 +135,7 @@ Using `whois` and DNS lookups, we identified the following:
 </p>
 
 <p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-014.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-024.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 3: Image That Has Been Upload to Phishing Page.</em>
 </p>
 
