@@ -27,17 +27,27 @@ This report documents a phishing campaign active during the **Starting 2026** se
 
 ## 3. Visual Analysis & Proofs
 
-### A. Landing Page Impersonation
-The page uses the official LHDN and Malaysia Madani logos to create a false sense of authority.
+### Delivery Method & Social Engineering
+The threat actor uses Telegram Group to deliver phishing link. TA also put some captions to increase the link's trustworthiness.
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-025.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 1: Threat Actor Spread Phishing Link In Telegram Group.</em>
 </p>
 
+### A. Landing Page Impersonation
+The page uses the official LHDN and Malaysia Madani logos to create a false sense of authority.
+
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 1: Main landing page.</em>
+</p>
+
+The TA may post fake testimonials or 'success' messages in the group to convince others the link is safe
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-027.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 1: Fake Testimonials.</em>
 </p>
 
 ### B. Data Harvest Form
