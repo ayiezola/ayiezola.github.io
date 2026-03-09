@@ -12,10 +12,12 @@ This report documents a phishing campaign active during the **Starting 2026** se
   <strong>⚠️ DANGER:</strong> The URL <code>https://bantuanstr.infopublic.my.id/e/</code> is confirmed <strong>MALICIOUS</strong>. Do not enter real data.
 </div>
 
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/Overview_Phishing_STR.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Full Chain Phishing ATO.</em>
 </p>
+
 ---
 
 ## 2. Threat Intelligence
