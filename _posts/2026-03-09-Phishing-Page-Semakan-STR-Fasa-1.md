@@ -45,7 +45,7 @@ The form asks for the user's phone number. Once submitted, it likely redirects t
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-023.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 2: Form capturing victim's Telegram OTP.</em>
+  <br><em>Figure 3: Form capturing victim's Telegram OTP.</em>
 </p>
 
 ---
@@ -54,8 +54,8 @@ The form asks for the user's phone number. Once submitted, it likely redirects t
 
 ### Domain Infrastructure
 Using `whois` and DNS lookups, we identified the following:
-* **Registrar:** [Insert Registrar Name, e.g., PANDI]
-* **Hosting:** [e.g., Cloudflare / Hostinger]
+* **Registrar:** [PT Digital Registra Indonesia]
+* **CDN:** [Cloudflare]
 * **SSL Status:** Valid (Let's Encrypt), used to trick users into seeing the "Padlock" icon.
 
 ### Indicators of Compromise (IoCs)
