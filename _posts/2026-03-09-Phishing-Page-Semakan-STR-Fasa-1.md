@@ -87,26 +87,14 @@ Using `whois` and DNS lookups, we identified the following:
 * **Phone Number:** `[Insert Phone Number]`
 * **OTP:** `[Insert OTP]`
 
-
----
-
-## 5. Prevention & Reporting
-**Official Links:**
-* Official STR Portal: [https://bantuantunai.hasil.gov.my/](https://bantuantunai.hasil.gov.my/)
-
-**How to Report:**
-1. Call **NSRC (National Scam Response Centre)** at **997**.
-2. Report the URL via **Google Safe Browsing**.
-3. Use the **SemakMule** portal by PDRM.
-
----
-
-[Back to Home](https://ayiezola.github.io/)
+### Infrastructure Recon
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-003.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 3: Find Language Slank in Source Code Review.</em>
+  <br><em>Figure 3: Snippet of the source code showing "Opsional" (Indonesian spelling) instead of the Malaysian "Optional".</em>
 </p>
+
+**Analysis:** This suggests the phishing kit was either developed by an Indonesian-speaking threat actor or repurposed from a template originally targeting Indonesian banking/aid portals.
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-004.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
@@ -132,6 +120,30 @@ Using `whois` and DNS lookups, we identified the following:
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-008.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 3: Content expose with page indexing.</em>
 </p>
+---
+
+## 5. Prevention & Reporting
+**Official Links:**
+* Official STR Portal: [https://bantuantunai.hasil.gov.my/](https://bantuantunai.hasil.gov.my/)
+
+**How to Report:**
+1. Call **NSRC (National Scam Response Centre)** at **997**.
+2. Report the URL via **Google Safe Browsing**.
+3. Use the **SemakMule** portal by PDRM.
+
+---
+
+[Back to Home](https://ayiezola.github.io/)
+
+
+
+
+
+
+
+
+
+
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-009.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
