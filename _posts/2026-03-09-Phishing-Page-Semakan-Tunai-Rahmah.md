@@ -31,7 +31,7 @@ This report documents a phishing campaign active during the **Starting 2026** se
 The threat actor uses Telegram Group to deliver phishing link. TA also put some captions to increase the link's trustworthiness.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-025.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-025.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 1: Threat Actor Spread Phishing Link In Telegram Group.</em>
 </p>
 
@@ -39,14 +39,14 @@ The threat actor uses Telegram Group to deliver phishing link. TA also put some 
 The page uses the official LHDN and Malaysia Madani logos to create a false sense of authority.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 2: Main landing page.</em>
 </p>
 
 The TA may post fake testimonials or 'success' messages in the group to convince others the link is safe
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-027.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-027.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 3: Fake Testimonials.</em>
 </p>
 
@@ -62,12 +62,12 @@ The phishing flow transitions from simple data collection to an active account h
 </div>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-002.png" alt="Data Capture Form" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-002.png" alt="Data Capture Form" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 4: Form capturing victim's name and phone number.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-023.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-023.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 5: Form capturing victim's Telegram OTP.</em>
 </p>
 
@@ -90,64 +90,64 @@ Using `whois` and DNS lookups, we identified the following:
 ### Infrastructure Recon
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-003.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-003.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 6: Snippet of the source code showing "Opsional" (Indonesian spelling) instead of the Malaysian "Optional".</em>
 </p>
 
 **Analysis:** This suggests the phishing kit was either developed by an Indonesian-speaking threat actor or repurposed from a template originally targeting Indonesian banking/aid portals.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-012.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-012.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 7: TA Use Valid Favicon Icon From Official Domain (hasil.gov.my).</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-004.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-004.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 8: Error Configure Landing Page.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-005.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-005.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 9: List of available path.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-006.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-006.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 10: CPanel Login.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-007.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-007.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 11: Robots.txt.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-008.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-008.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 12: Content Expose via Page Indexing.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-011.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-011.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 13: Checking Host IP Address.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-009.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-009.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 14: Subdomain Recon.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-021.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-021.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 15: Nameserver Info.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-026.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-026.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 16: Fuzzing valid path.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-022.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-022.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 17: Path Data Expose.</em>
 </p>
 
@@ -163,52 +163,52 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
 1.  **Redundancy:** Maintain uptime if the primary `infopublic.my.id`.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-010.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-010.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 18: Found another Phishing Page for 2026.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.comayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.comayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 19: Threat Actor Telegram Token Expose.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-019.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-019.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 20: Bot Info.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-020.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-020.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 21: Bot Info.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-013.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-013.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 22: Capturing Previous Log / Content From Telegram Bot Token.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-015.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-015.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 23: Captured Image.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-024.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-024.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 24: Image That Has Been Upload to Phishing Page.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-016.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-016.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 25: Captured Phone Number and OTP.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-018.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-018.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 26: Capturing Tiktok Account Credentials.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-017.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-017.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 27: Image Captured Showing Other Phishing Page.</em>
 </p>
 ---
