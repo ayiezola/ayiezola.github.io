@@ -50,8 +50,16 @@ The TA may post fake testimonials or 'success' messages in the group to convince
   <br><em>Figure 1: Fake Testimonials.</em>
 </p>
 
-### B. Data Harvest Form
-The form asks for the user's phone number. Once submitted, it likely redirects to a fake banking selector or a credential harvesting page.
+### B. Data Harvest & Account Takeover Form
+The phishing flow transitions from simple data collection to an active account hijacking attempt:
+
+1. **Phone Number Collection:** The form first requests the victim's mobile phone number.
+2. **Real-time Exploitation:** Once the number is submitted, the backend triggers a legitimate Telegram login request to the victim's device.
+3. **OTP Interception:** The victim is redirected to a second page prompting them to enter the OTP code sent to their Telegram account.
+
+<div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
+  <strong>Note:</strong> This is a classic "Man-in-the-Middle" (MitM) technique. If the victim provides the OTP, the attacker gains full access to their Telegram account, contacts, and private messages.
+</div>
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-002.png" alt="Data Capture Form" width="800px" style="border: 1px solid #ddd;"/>
