@@ -31,7 +31,7 @@ This report documents a phishing campaign active during the **Starting 2026** se
 The page uses the official LHDN and Malaysia Madani logos to create a false sense of authority.
 
 <p align="center">
-  <img src="assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="600px" style="border: 1px solid #ddd;"/>
+  <img src="./assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="600px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 1: Main landing page mimicry.</em>
 </p>
 
