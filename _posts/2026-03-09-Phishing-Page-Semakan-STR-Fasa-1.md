@@ -120,6 +120,31 @@ Using `whois` and DNS lookups, we identified the following:
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-008.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 3: Content expose with page indexing.</em>
 </p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-011.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Checking Host IP Address.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-009.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Subdomain Recon.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-021.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Nameserver Info.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-022.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Path DATA Expose.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Threat Actor Telegram Token Expose.</em>
+</p>
 ---
 
 ## 5. Prevention & Reporting
@@ -145,20 +170,14 @@ Using `whois` and DNS lookups, we identified the following:
 
 
 
-<p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-009.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 3: Subdomain Recon.</em>
-</p>
+
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-010.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 3: Found another Phishing Page for 2026.</em>
 </p>
 
-<p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-011.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 3: Checking Host IP Address.</em>
-</p>
+
 
 <p align="center">
   <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-012.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
@@ -205,17 +224,8 @@ Using `whois` and DNS lookups, we identified the following:
   <br><em>Figure 3: Bot Info.</em>
 </p>
 
-<p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-021.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 3: Nameserver Info.</em>
-</p>
 
-<p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-022.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 3: Path DATA Expose.</em>
-</p>
 
-<p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 3: Threat Actor Telegram Token Expose.</em>
-</p>
+
+
+
