@@ -31,16 +31,21 @@ This report documents a phishing campaign active during the **Starting 2026** se
 The page uses the official LHDN and Malaysia Madani logos to create a false sense of authority.
 
 <p align="center">
-  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="600px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 1: Main landing page mimicry.</em>
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-001.png" alt="Phishing Landing Page" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 1: Main landing page.</em>
 </p>
 
 ### B. Data Harvest Form
-The form asks for the user's NRIC (MyKad) number. Once submitted, it likely redirects to a fake banking selector or a credential harvesting page.
+The form asks for the user's phone number. Once submitted, it likely redirects to a fake banking selector or a credential harvesting page.
 
 <p align="center">
-  <img src="./images/form-submission.png" alt="Data Capture Form" width="600px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 2: Form capturing NRIC data.</em>
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-002.png" alt="Data Capture Form" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 2: Form capturing victim's name and phone number.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/ayiezola/ayiezola.github.io/blob/master/assets/phishing-str/bantuan-str-023.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 2: Form capturing victim's Telegram OTP.</em>
 </p>
 
 ---
@@ -55,7 +60,9 @@ Using `whois` and DNS lookups, we identified the following:
 
 ### Indicators of Compromise (IoCs)
 * **URL:** `https://bantuanstr.infopublic.my.id/e/`
-* **IP:** `[Insert IP Address]`
+* **Name:** `[Insert Name]`
+* **Phone Number:** `[Insert Phone Number]`
+* **OTP:** `[Insert OTP]`
 
 ---
 
