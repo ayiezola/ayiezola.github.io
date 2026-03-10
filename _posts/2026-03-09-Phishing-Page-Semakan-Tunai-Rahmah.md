@@ -21,14 +21,21 @@ This report documents a phishing campaign active during the **Starting 2026** se
 
 ---
 
-## 2. Threat Intelligence
-| Attribute | Details |
+## 2. Threat Intelligence & Infrastructure
+This section outlines the core technical indicators identified during the initial triage.
+
+| Entity | Intelligence Detail |
 | :--- | :--- |
-| **Phishing URL** | `https://bantuanstr.infopublic.my.id/e/` |
-| **Primary Domain** | `infopublic.my.id` |
-| **TLD Analysis** | `.my.id` (Indonesian TLD - a major red flag for MY gov sites) |
-| **Theme** | "Semakan STR 2026" |
-| **Status** | **ACTIVE** |
+| **Primary Phishing URL** | <code style="color: #d73a49;">https://bantuanstr.infopublic.my.id/e/</code> |
+| **Collector Domain** | `berjaya66.my.id` (C2 Backend) |
+| **Target Region** | 🇲🇾 Malaysia (International Code: +60) |
+| **Impersonated Theme** | Sumbangan Tunai Rahmah (STR) 2026 |
+| **Attack Vector** | Telegram Social Engineering (SE) |
+| **Threat Status** | <span style="color: white; background-color: #d73a49; padding: 2px 8px; border-radius: 4px; font-weight: bold;">ACTIVE / MALICIOUS</span> |
+
+### 🚩 Geographic Red Flags
+> [!IMPORTANT]
+> **Top-Level Domain (TLD) Mismatch:** The use of the `.my.id` TLD is a definitive indicator of fraud. Official Malaysian government services strictly utilize the `.gov.my` hierarchy. The `.id` extension is assigned to Indonesia, confirming that this infrastructure is not managed by the Malaysian Ministry of Finance or LHDN.
 
 ---
 
@@ -105,7 +112,7 @@ The most significant find was the exposure of the **Telegram Bot Token** (Figure
 2. **OTP Interception:** Active Man-in-the-Middle attacks on Telegram accounts.
 3. **Collateral Damage:** The bot was also used to harvest **TikTok credentials** (Figure 26) and **private images** (Figure 23), suggesting a broader identity theft operation.
 
-### Infrastructure Recon
+### Code Review
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-003.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
@@ -172,15 +179,15 @@ The most significant find was the exposure of the **Telegram Bot Token** (Figure
 ### 5. JavaScript Configuration in index.php
 Deep analysis of the `index.php` source code revealed a `window.setting` configuration object. This script serves as the "brain" of the phishing kit, managing data flow and psychological manipulation.
 
-#### 1. Command & Control (C2) Endpoint
+#### A. Command & Control (C2) Endpoint
 * **Endpoint URL:** `https://berjaya66.my.id/bot/`
 * **Analysis:** This is the **primary collector**. All captured data (Name, Phone Numbers, and OTPs) is POSTed to this URL. The use of a separate domain for the backend (`berjaya66.my.id`) allows the attacker to keep harvesting data even if the front-end landing page is taken down.
 
-#### 2. Geo-Targeting (Malaysia)
+#### B. Geo-Targeting (Malaysia)
 * **Attributes:** `COUNTRY_CODE: '+60'`, `COUNTRY_ID: 'my'`
 * **Analysis:** The kit is hardcoded to target Malaysian citizens. The script automatically applies the Malaysian international dialing code, ensuring the stolen phone numbers are ready for the attacker to use for Telegram hijacking immediately.
 
-#### 3. Man-in-the-Middle (MitM) Timer Logic
+#### C. Man-in-the-Middle (MitM) Timer Logic
 * **Attributes:** `otp: { expirationTime: 300 }`
 * **Analysis:** The script implements a 300-second (5-minute) countdown.
     * **Psychological Tactic:** This creates a false sense of urgency. By mimicking a legitimate bank or Telegram security timer, it pressures the victim into entering their OTP as quickly as possible, bypassing their natural suspicion.
@@ -191,7 +198,30 @@ Deep analysis of the `index.php` source code revealed a `window.setting` configu
   <br><em>Figure 18: Analysis of the hardcoded window.setting configuration.</em>
 </p>
 
-### 6. Multi-Domain Phishing Campaign (2026 Expansion)
+### 6. Deep Dive: Telegram Hijacking Logic (`otp-controller.js`)
+Analysis of the `handleOtp` function confirms a highly sophisticated **Man-in-the-Middle (MitM)** attack designed for Telegram account takeover.
+
+#### A. Technical Features:
+* **Session Pairing:** The script harvests `phone_code_hash` from the browser's storage. This value is required to complete the login process on the attacker's server.
+* **2FA Detection:** The code includes logic to detect if the victim has **Two-Factor Authentication** enabled. If `needs_2fa` is returned from the C2 server, the UI dynamically switches to harvest the victim's Cloud Password.
+* **Data Exfiltration:** Data is packaged into a JSON object and sent via a custom `sendMessageToTelegram` function.
+
+**Captured Data Payload:**
+```json
+{
+  "code": "Stolen_OTP",
+  "phone_number": "Victim_Number",
+  "session_id": "Session_ID",
+  "phone_code_hash": "Telegram_Internal_Hash"
+}
+```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-031.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 19: Logic within otp-controller.js showing the extraction of the phone_code_hash—a critical component for bypassing Telegram security.</em>
+</p>
+
+### 7. Multi-Domain Phishing Campaign (2026 Expansion)
 Our investigation has uncovered that the threat actor (TA) is not relying on a single URL. A second, identical phishing page has been identified, indicating a wider coordinated campaign targeting Malaysians.
 
 #### Newly Identified Asset:
@@ -204,52 +234,52 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-010.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 18: Found another Phishing Page for 2026.</em>
+  <br><em>Figure 20: Found another Phishing Page for 2026.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/refs/heads/master/assets/phishing-str/bantuan-str-028.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 19: Threat Actor Telegram Token Expose.</em>
+  <br><em>Figure 21: Threat Actor Telegram Token Expose.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-019.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 20: Bot Info.</em>
+  <br><em>Figure 22: Bot Info.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-020.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 21: Bot Info.</em>
+  <br><em>Figure 23: Bot Info.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-013.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 22: Capturing Previous Log / Content From Telegram Bot Token.</em>
+  <br><em>Figure 24: Capturing Previous Log / Content From Telegram Bot Token.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-015.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 23: Captured Image.</em>
+  <br><em>Figure 25: Captured Image.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-024.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 24: Image That Has Been Upload to Phishing Page.</em>
+  <br><em>Figure 26: Image That Has Been Upload to Phishing Page.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-016.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 25: Captured Phone Number and OTP.</em>
+  <br><em>Figure 27: Captured Phone Number and OTP.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-018.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 26: Capturing Tiktok Account Credentials.</em>
+  <br><em>Figure 28: Capturing Tiktok Account Credentials.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-017.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 27: Image Captured Showing Other Phishing Page.</em>
+  <br><em>Figure 29: Image Captured Showing Other Phishing Page.</em>
 </p>
 ---
 
@@ -264,7 +294,7 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-029.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 28: Done submit report to google safe browsing.</em>
+  <br><em>Figure 30: Done submit report to google safe browsing.</em>
 </p>
 ---
 
