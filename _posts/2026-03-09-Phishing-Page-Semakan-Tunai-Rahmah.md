@@ -203,7 +203,7 @@ Analysis of the `handleOtp` function confirms a highly sophisticated **Man-in-th
 
 #### A. Technical Features:
 * **Session Pairing:** The script harvests `phone_code_hash` from the browser's storage. This value is required to complete the login process on the attacker's server.
-* **2FA Detection:** The code includes logic to detect if the victim has **Two-Factor Authentication** enabled. If `needs_2fa` is returned from the C2 server, the UI dynamically switches to harvest the victim's Cloud Password.
+* **2FA Detection:** The code includes logic to detect if the victim has **Two-Factor Authentication** enabled. If `needs_2fa` is returned from the C2 server, the UI dynamically switches to harvest the victim's Telegram Password.
 * **Data Exfiltration:** Data is packaged into a JSON object and sent via a custom `sendMessageToTelegram` function.
 
 **Captured Data Payload:**
@@ -218,7 +218,7 @@ Analysis of the `handleOtp` function confirms a highly sophisticated **Man-in-th
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-031.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 19: Logic within otp-controller.js showing the extraction of the phone_code_hash—a critical component for bypassing Telegram security.</em>
+  <br><em>Figure 19: Logic within otp-controller.js showing code to grab OTP and 2FA for bypassing Telegram security.</em>
 </p>
 
 ### 7. Multi-Domain Phishing Campaign (2026 Expansion)
