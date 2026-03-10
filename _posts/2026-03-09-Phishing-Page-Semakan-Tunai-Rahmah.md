@@ -24,14 +24,13 @@ This report documents a phishing campaign active during the **Starting 2026** se
 ## 2. Threat Intelligence & Infrastructure
 This section outlines the core technical indicators identified during the initial triage.
 
-| Entity | Intelligence Detail |
-| :--- | :--- |
-| **Primary Phishing URL** | <code style="color: #d73a49;">https://bantuanstr.infopublic.my.id/e/</code> |
-| **Collector Domain** | `berjaya66.my.id` (C2 Backend) |
-| **Target Region** | 🇲🇾 Malaysia (International Code: +60) |
-| **Impersonated Theme** | Sumbangan Tunai Rahmah (STR) 2026 |
-| **Attack Vector** | Telegram Social Engineering (SE) |
-| **Threat Status** | <span style="color: white; background-color: #d73a49; padding: 2px 8px; border-radius: 4px; font-weight: bold;">ACTIVE / MALICIOUS</span> |
+## Entity | Intelligence Detail |
+**Primary Phishing URL** | <code style="color: #d73a49;">https://bantuanstr.infopublic.my.id/e/</code>
+**Collector Domain** | `berjaya66.my.id` (C2 Backend)
+**Target Region** | 🇲🇾 Malaysia (International Code: +60)
+**Impersonated Theme** | Sumbangan Tunai Rahmah (STR) 2026
+**Attack Vector** | Telegram Social Engineering (SE)
+**Threat Status** | <span style="color: white; background-color: #d73a49; padding: 2px 8px; border-radius: 4px; font-weight: bold;">ACTIVE / MALICIOUS</span>
 
 ### 🚩 Geographic Red Flags
 > [!IMPORTANT]
