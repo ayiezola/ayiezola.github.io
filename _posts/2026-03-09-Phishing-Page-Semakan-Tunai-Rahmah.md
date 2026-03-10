@@ -169,7 +169,29 @@ The most significant find was the exposure of the **Telegram Bot Token** (Figure
   <br><em>Figure 17: Path Data Expose.</em>
 </p>
 
-### 7. Multi-Domain Phishing Campaign (2026 Expansion)
+### 5. JavaScript Configuration in index.php
+Deep analysis of the `index.php` source code revealed a `window.setting` configuration object. This script serves as the "brain" of the phishing kit, managing data flow and psychological manipulation.
+
+#### 1. Command & Control (C2) Endpoint
+* **Endpoint URL:** `https://berjaya66.my.id/bot/`
+* **Analysis:** This is the **primary collector**. All captured data (Name, Phone Numbers, and OTPs) is POSTed to this URL. The use of a separate domain for the backend (`berjaya66.my.id`) allows the attacker to keep harvesting data even if the front-end landing page is taken down.
+
+#### 2. Geo-Targeting (Malaysia)
+* **Attributes:** `COUNTRY_CODE: '+60'`, `COUNTRY_ID: 'my'`
+* **Analysis:** The kit is hardcoded to target Malaysian citizens. The script automatically applies the Malaysian international dialing code, ensuring the stolen phone numbers are ready for the attacker to use for Telegram hijacking immediately.
+
+#### 3. Man-in-the-Middle (MitM) Timer Logic
+* **Attributes:** `otp: { expirationTime: 300 }`
+* **Analysis:** The script implements a 300-second (5-minute) countdown.
+    * **Psychological Tactic:** This creates a false sense of urgency. By mimicking a legitimate bank or Telegram security timer, it pressures the victim into entering their OTP as quickly as possible, bypassing their natural suspicion.
+    * **Technical Tactic:** The `expired: false` status indicates that the backend is actively listening for an incoming OTP session from the victim's device.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-script-logic.png" alt="Window Setting Script" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 18: Analysis of the hardcoded window.setting configuration.</em>
+</p>
+
+### 6. Multi-Domain Phishing Campaign (2026 Expansion)
 Our investigation has uncovered that the threat actor (TA) is not relying on a single URL. A second, identical phishing page has been identified, indicating a wider coordinated campaign targeting Malaysians.
 
 #### Newly Identified Asset:
