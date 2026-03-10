@@ -187,7 +187,7 @@ Deep analysis of the `index.php` source code revealed a `window.setting` configu
     * **Technical Tactic:** The `expired: false` status indicates that the backend is actively listening for an incoming OTP session from the victim's device.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-script-logic.png" alt="Window Setting Script" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-030.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 18: Analysis of the hardcoded window.setting configuration.</em>
 </p>
 
