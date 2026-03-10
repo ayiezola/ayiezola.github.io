@@ -240,6 +240,10 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
 2. Report the URL via **Google Safe Browsing**.
 3. Use the **SemakMule** portal by PDRM.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-029.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 28: Done submit report to google safe browsing.</em>
+</p>
 ---
 
 [Back to Home](https://ayiezola.github.io/)
