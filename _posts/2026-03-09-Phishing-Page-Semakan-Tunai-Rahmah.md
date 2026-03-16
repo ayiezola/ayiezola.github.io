@@ -303,6 +303,17 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-033.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 32: Nuclei template to detect phishing kit.</em>
 </p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-034.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 33: Phishing website currently down.</em>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-035.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 34: Automate this make simple to reporting process.</em>
+</p>
+
 ---
 
 [Back to Home](https://ayiezola.github.io/)
