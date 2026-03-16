@@ -297,7 +297,7 @@ Both sites share the same codebase, design, and exfiltration logic (Telegram-bas
   <br><em>Figure 30: Done submit report to google safe browsing.</em>
 </p>
 
-** Write template for Phishing kit detection **
+**Write template for Phishing kit detection**
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-str/bantuan-str-033.png" alt="OTP Capture" width="800px" style="border: 1px solid #ddd;"/>
