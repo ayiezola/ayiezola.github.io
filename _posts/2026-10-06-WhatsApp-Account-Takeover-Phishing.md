@@ -60,7 +60,7 @@ This section outlines the core technical indicators identified during triage.
 The threat actor (TA) delivers the lure by SMS/WhatsApp with an urgent "account will be suspended" hook, then redirects the victim through a **rotating short link** to a look-alike "WhatsApp Security Center".
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-001.png" alt="Lure SMS" width="500px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-001.jpeg" alt="Lure SMS" width="500px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 1: Lure message received — account "flagged", verify within 2 hours.</em>
 </p>
 
