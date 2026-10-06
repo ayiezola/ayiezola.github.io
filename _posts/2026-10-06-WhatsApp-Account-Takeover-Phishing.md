@@ -60,6 +60,12 @@ Here's the core of what we pulled during triage.
 The campaign has **two delivery hops**. The first one is the interesting part: a **Fake BTS**, the technique the TA originally used to get the lure onto victims' phones.
 
 #### Method 1 — Fake BTS (False Base Station) SMS
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/fake-bts-diagram.png" alt="Fake BTS" width="500px" style="border: 1px solid #ddd;"/>
+  <br><em>Diagram of Fake BTS.</em>
+</p>
+
 A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the handset has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby handsets onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are camped on the fake tower, the operator can:
 
 * **Spoof the sender ID** — the SMS can show whatever name or number they want (e.g. a "WhatsApp" alert), so it looks completely official.
