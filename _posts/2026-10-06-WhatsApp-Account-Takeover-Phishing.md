@@ -16,7 +16,7 @@ author: Ayiezola
 ---
 
 ## 1. Executive Summary
-There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-digit linking code**. Hand that code over and it's game over: **full account takeover**.
+There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-digit linking code**. Hand that code over and it's game over: **full account takeover**.
 
 <div style="background-color: #ffe6e6; border-left: 6px solid #ff4d4d; padding: 15px; margin: 20px 0;">
   <strong>⚠️ DANGER:</strong> The domains <code>wsappcenter.com</code> / <code>apwscenter.com</code> and the lure <code>hxxps://avvf[.]me/pltjd</code> are confirmed <strong>MALICIOUS</strong>. Do not enter real data.
@@ -56,13 +56,40 @@ Here's the core of what we pulled during triage.
 
 ## 3. Visual Analysis & Proofs
 
-### How it lands
-The threat actor (TA) pushes the link over SMS/WhatsApp with the usual **urgency play**, then bounces you through a **rotating short link** onto a look-alike "WhatsApp Security Center".
+### How it lands — Fake BTS first, then a short link
+The campaign has **two delivery hops**. The first one is the interesting part: a **Fake BTS**, the technique the TA originally used to get the lure onto victims' phones.
+
+#### Method 1 — Fake BTS (False Base Station) SMS
+A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the handset has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby handsets onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are camped on the fake tower, the operator can:
+
+* **Spoof the sender ID** — the SMS can show whatever name or number they want (e.g. a "WhatsApp" alert), so it looks completely official.
+* **Bypass every telco filter** — the message never touches the carrier's SMS gateway, so spam/scam filtering simply never sees it.
+* **Hit everyone in range at once** — no need to know a victim's number; every handset nearby gets the text. No SIM farm, no per-SMS cost.
+* **Leave almost no trace** — no carrier logs tying the blast to the sender.
+
+For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" or "No Service"** just before an odd SMS lands from a sender that has no business texting you.
+
+<div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
+  <strong>Why it matters:</strong> Fake BTS is how the SMS slips past carrier spam filters and lands looking 100% legit — that's the entire "first hop" of the attack. Everything after it (the short link, the kit, the live chat) is ordinary phishing once you've already clicked.
+</div>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-001.jpeg" alt="Lure SMS" width="500px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 1: Lure message received — account "flagged", verify within 2 hours.</em>
 </p>
+
+#### Fake BTS in the wild — Malaysia (2026)
+This isn't theoretical. Malaysian enforcers are chasing it right now:
+
+* **Johor Baru, 6 Aug 2026** — MCMC and PDRM dismantled a Fake BTS SMS syndicate, arresting a **65-year-old local man** caught operating a **vehicle rigged with Fake BTS gear**: two mobile phones, a SIM card, a GSM module, an antenna and the car itself. The rig beamed phishing SMS straight at **high-density commuter areas in peak hours**, specifically the **Johor Bahru–Singapore** crowd. It was one of **six Fake BTS operations** MCMC ran in 2026 (three in Johor, three in Genting Highlands). — [NST, 11 Aug 2026](https://www.nst.com.my/news/nation/2026/08/1508777/mcmc-police-bust-fake-bts-scam-syndicate-johor)
+* **Dewan Negara, 23 Feb 2026** — Deputy Communications Minister **Teo Nie Ching** said the devices hide inside **vehicles or bags**, letting syndicates "move dynamically" to dodge MCMC and PDRM — and that enforcement relies on **public reports** to pin down the exact location. — [Berita Harian, 23 Feb 2026](https://www.bharian.com.my/berita/nasional/2026/02/1512786/sindiket-fake-bts-bergerak-dinamik-jadi-cabaran-penguatkuasaan)
+
+<div style="background-color: #ffebe6; border-left: 6px solid #ff8c42; padding: 15px; margin: 20px 0;">
+  <strong>Why it's relevant here:</strong> the same rogue-tower play that lands a "bank SMS" also lands a "WhatsApp suspension" text. The delivery method in this report is exactly the tactic MCMC is chasing across Johor — same technique, different lure.
+</div>
+
+#### Method 2 — The rotating short link
+From there it's the usual play: an **urgency hook** plus a **rotating short link** that bounces the victim onto a look-alike "WhatsApp Security Center".
 
 ### A. Landing Page Impersonation
 WhatsApp branding, bilingual copy (Chinese by default, English on tap) — all there to make it feel official.
@@ -235,11 +262,13 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 * **NSRC (National Scam Response Centre):** call **997**.
 * **Report the URL** via **Google Safe Browsing** and **SemakMule** (PDRM).
 * **Report to MCMC** / MyCERT (Cyber999) to get registrars, Cloudflare, AWS and Meta moving.
+* **Report Fake BTS / spoofed-sender SMS to MCMC and your telco** — they can hunt the rogue tower, and it's worth asking your carrier about disabling 2G where possible.
 
 **Detection ideas (blue team):**
 * Alert on 302s from shortener hosts to `*.wsappcenter.com` / `ws*.apwscenter.com`.
 * Flag fake-brand pages whose CSP references `r2.cloudflarestorage.com`.
 * High-confidence: `<title>WhatsApp安全中心</title>` on any non-`whatsapp.com` domain.
+* **Fake BTS:** watch for handsets dropping to **2G/EDGE** right before suspicious SMS, and treat spoofed-sender-ID blasts as a rogue-tower indicator.
 
 ---
 
