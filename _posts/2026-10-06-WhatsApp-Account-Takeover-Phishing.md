@@ -66,7 +66,7 @@ The campaign has **two delivery hops**. The first one is the interesting part: a
   <br><em>Diagram of Fake BTS. This is AI generated image</em>
 </p>
 
-A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the handset has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby handsets onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are camped on the fake tower, the operator can:
+A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the handset has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby handsets onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connect to the fake tower, the operator can:
 
 * **Spoof the sender ID** — the SMS can show whatever name or number they want (e.g. a "WhatsApp" alert), so it looks completely official.
 * **Bypass every telco filter** — the message never touches the carrier's SMS gateway, so spam/scam filtering simply never sees it.
@@ -76,7 +76,7 @@ A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher
 For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" or "No Service"** just before an odd SMS lands from a sender that has no business texting you.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
-  <strong>Why it matters:</strong> Fake BTS is how the SMS slips past carrier spam filters and lands looking 100% legit — that's the entire "first hop" of the attack. Everything after it (the short link, the kit, the live chat) is ordinary phishing once you've already clicked.
+  <strong>Why it matters:</strong> Fake BTS is how the SMS slips past carrier spam filters and lands looking 100% legit — that's the entire "first hop" of the attack. Everything that follows (the short link, the kit, the live chat) is essentially ordinary phishing once you click.
 </div>
 
 <p align="center">
@@ -84,16 +84,16 @@ For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" o
   <br><em>Figure 1: Lure message received — account "flagged", verify within 2 hours.</em>
 </p>
 
-This message popped up on my phone just after we finished breakfast at a famous mamak restaurant around Jalan Semarak. Can you guess where? 😄
+This message popped up on my phone right after we finished breakfast at a famous mamak restaurant around Jalan Semarak. Can you guess where? 😄
 
 #### Fake BTS in the wild — Malaysia (2026)
 This isn't theoretical. Malaysian enforcers are chasing it right now:
 
-* **Johor Baru, 6 Aug 2026** — MCMC and PDRM dismantled a Fake BTS SMS syndicate, arresting a **65-year-old local man** caught operating a **vehicle rigged with Fake BTS gear**: two mobile phones, a SIM card, a GSM module, an antenna and the car itself. The rig beamed phishing SMS straight at **high-density commuter areas in peak hours**, specifically the **Johor Bahru–Singapore** crowd. It was one of **six Fake BTS operations** MCMC ran in 2026 (three in Johor, three in Genting Highlands). — [NST, 11 Aug 2026](https://www.nst.com.my/news/nation/2026/08/1508777/mcmc-police-bust-fake-bts-scam-syndicate-johor)
+* **Johor Bahru, 6 Aug 2026** — MCMC and PDRM dismantled a Fake BTS SMS syndicate, arresting a **65-year-old local man** caught operating a **vehicle rigged with Fake BTS gear**: two mobile phones, a SIM card, a GSM module, an antenna and the car itself. The rig beamed phishing SMS straight at **high-density commuter areas in peak hours**, specifically the **Johor Bahru–Singapore** crowd. It was one of **six Fake BTS operations** MCMC ran in 2026 (three in Johor, three in Genting Highlands). — [NST, 11 Aug 2026](https://www.nst.com.my/news/nation/2026/08/1508777/mcmc-police-bust-fake-bts-scam-syndicate-johor)
 * **Dewan Negara, 23 Feb 2026** — Deputy Communications Minister **Teo Nie Ching** said the devices hide inside **vehicles or bags**, letting syndicates "move dynamically" to dodge MCMC and PDRM — and that enforcement relies on **public reports** to pin down the exact location. — [Berita Harian, 23 Feb 2026](https://www.bharian.com.my/berita/nasional/2026/02/1512786/sindiket-fake-bts-bergerak-dinamik-jadi-cabaran-penguatkuasaan)
 
 <div style="background-color: #ffebe6; border-left: 6px solid #ff8c42; padding: 15px; margin: 20px 0;">
-  <strong>Why it's relevant here:</strong> the same rogue-tower play that lands a "bank SMS" also lands a "WhatsApp suspension" text. The delivery method in this report is exactly the tactic MCMC is chasing across Johor — same technique, different lure.
+  <strong>Why it's relevant here:</strong> the same rogue-tower play that lands a "bank SMS" also lands a "WhatsApp suspension" text. The delivery method described in this report is exactly the tactic MCMC is tracking across Johor — the same technique, just with a different lure.
 </div>
 
 #### Method 2 — The rotating short link
