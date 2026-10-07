@@ -100,7 +100,7 @@ This isn't theoretical. Malaysian enforcers are chasing it right now:
 From there it's the usual play: an **urgency hook** plus a **rotating short link** that bounces the victim onto a look-alike "WhatsApp Security Center".
 
 ### A. Landing Page Impersonation
-WhatsApp branding, bilingual copy (Chinese by default, English on tap) — all there to make it feel official.
+WhatsApp branding, bilingual copy (Chinese by default, English on tap) — it is designed to make it look official.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-002.png" alt="Fake WhatsApp Security Center" width="800px" style="border: 1px solid #ddd;"/>
@@ -116,11 +116,11 @@ WhatsApp branding, bilingual copy (Chinese by default, English on tap) — all t
 It stops being a "copy-paste phishing page" real quick:
 
 1. **It fingerprints you first:** makes you pick **Android or iPhone**, then serves a matching skin in your language.
-2. **Then puts a human on the line:** a **real-time chat** opens with an operator (the "REALTIME TALK" panel backend) who chats you up and builds trust.
-3. **Then walks you into the trap:** the operator tells you to open WhatsApp → **Linked Devices** → *Link with phone number* → and key in the **8-digit code they hand you**.
+2. **Then puts a human on the line:** a **real-time chat** opens with an operator (the "REALTIME TALK" panel backend) who enggages with you and gradually builds your trust.
+3. **Then walks you into the trap:** the operator tells you to open WhatsApp → **Linked Devices** → *Link with phone number* → and key in the **8-digit code they provide**.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
-  <strong>Note:</strong> You're being talked into linking the <strong>attacker's</strong> device. Typing that 8-digit code doesn't "verify" anything — it hands them your chats, your contacts, and every <strong>OTP / 2FA code</strong> that lands in your WhatsApp.
+  <strong>Note:</strong> You're actually being tricked into linking the <strong>attacker's</strong> device to your WhatsApp. Entering 8-digit code doesn't "verify" anything — it gives them your chats, your contacts, and any <strong>OTP / 2FA code</strong> that lands in your WhatsApp.
 </div>
 
 <p align="center">
@@ -166,11 +166,11 @@ Sloppy hardening showed us the back room:
 </p>
 
 ### C. The "Smoking Gun": Exposed Origin IP (Cloudflare Bypass)
-The best find of the whole thing: a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
+The biggest discovery from the whole thing (Actually i love this part :)): a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
 
 * **Origin IP:** `47.128.213.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-128-213-130.ap-southeast-1.compute.amazonaws.com`.
 * **Stack:** nginx → Go, Debian 12. Ports **22 / 80 / 443** open (443 speaking plain HTTP).
-* **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain got suspended.
+* **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain was suspended.
 
 ```bash
 # Public recursive lookup — NXDOMAIN (registrar clientHold)
@@ -205,11 +205,11 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 ### A. Backend / Command & Control
 * **API:** REST + Server-Sent Events (Go `net/http`) — `/api/sessions`, `/api/conversations/{id}/events` (SSE), `/connect`.
 * **Panel API:** `/api/auth/{login,logout,me}`, `/api/agent/{conversations,quick-replies}`, `/api/admin/sites` — a **multi-site, multi-agent** panel ("Realtime Talk", localStorage key `realtime-talk-agent-read`).
-* **The clever bit:** everything the victim uploads gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
+* **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
 
 ### B. Geo-Targeting & Localization
 * **Attributes:** free-text country-code field; kit defaults to **+86**.
-* **What it tells us:** the kit was built for Chinese-speaking victims — the EN/ES/zh-TW skins mean they're now **reworking it for a wider, global play**, which is exactly why Malaysian users are getting hit.
+* **What it tells us:** the kit was specifically designed to target Chinese-speaking victims — the EN/ES/zh-TW skins mean they're now **adapting it for a wider global audience**, which is exactly why Malaysian users are being targeted.
 
 ### C. Operator Console
 * **Product:** internal name **"REALTIME TALK"** (Chinese 坐席工作台) — an off-the-shelf phishing-as-a-service panel with live chat, quick replies, and multi-site tenancy.
@@ -224,7 +224,7 @@ Read the live-chat flow and it's clear — this is **social engineering, not a c
 #### The moving parts:
 * **A human operator.** A live agent chats with the victim, running the same playbook as a fake bank/security call.
 * **Abuse of a real feature.** They lean on WhatsApp's genuine **"Link with phone number"** flow. No malware, no dodgy APK — just a code.
-* **Full takeover.** Once linked, they've got message history, contacts, the ability to **message as the victim**, and **interception of OTP/2FA codes** — all through WhatsApp.
+* **Full takeover.** Once linked, they can access your message history, contacts, the ability to **message as the victim**, and **interception of OTP/2FA codes** — all through WhatsApp.
 
 **Captured data payload (conceptual):**
 ```json
@@ -259,12 +259,12 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 
 ## 8. Prevention & Reporting
 
-**The one rule to remember:** WhatsApp **never** asks you to verify your account over a link, and **never** asks you to read out or type an **8-digit linking code** to a "support agent". That code is a **key to your account** — treat it like your password.
+**The one rule to remember:** WhatsApp **never** asks you to verify your account through a link, nor does it asks you to share or enter an **8-digit linking code** to a "support agent". That code is a **key to your account** — treat it like your password.
 
 **Already entered a code?**
 1. Open WhatsApp → **Linked Devices** → **remove anything you don't recognise**.
 2. Turn on **Two-Step Verification**.
-3. Warn your contacts (they can message them as you).
+3. Warn your contacts - the attacker may message them while pretending to be you.
 
 **Official / Reporting:**
 * **NSRC (National Scam Response Centre):** call **997**.
