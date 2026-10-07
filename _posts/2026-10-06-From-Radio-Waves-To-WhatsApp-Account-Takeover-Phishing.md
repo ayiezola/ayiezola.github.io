@@ -200,6 +200,11 @@ The biggest discovery from the whole thing (Actually i love this part :)): a **g
   <br><em>Figure 12: Exposed origin IP Address.</em>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-043.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 13: Exposed AWS EC2 hostnames.</em>
+</p>
+
 * **Origin IP:** `47.***.***.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-***-***-130.ap-southeast-1.compute.amazonaws.com`.
 * **Stack:** nginx → Go, Debian 12. Ports **22 / 80 / 443** open (443 speaking plain HTTP).
 * **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain was suspended.
@@ -215,22 +220,22 @@ curl -sD- -H "Host: whatsapp.wsappcenter.com" http://47.***.***.130/ -o /dev/nul
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-044.png" alt="Origin exposure" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 13: Origin-IP exposure — direct request returns the live kit (Cloudflare).</em>
+  <br><em>Figure 14: Origin-IP exposure — direct request returns the live kit (Cloudflare).</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-033.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 14: Phishing page kit has same body hash</em>
+  <br><em>Figure 15: Phishing page kit has same body hash</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-045.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 15: Registrar status <code>clientHold</code> / NXDOMAIN after takedown.</em>
+  <br><em>Figure 16: Registrar status <code>clientHold</code> / NXDOMAIN after takedown.</em>
 </p>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-046.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 16: Let's Encrypt wildcard certificate (SAN list).</em>
+  <br><em>Figure 17: Let's Encrypt wildcard certificate (SAN list).</em>
 </p>
 
 ---
@@ -245,7 +250,7 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-037.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 17: Behind the admin panel.</em>
+  <br><em>Figure 18: Behind the admin panel.</em>
 </p>
   
 * **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
@@ -260,7 +265,7 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-025.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 18: Operator login page.</em>
+  <br><em>Figure 19: Operator login page.</em>
 </p>
 
 ---
