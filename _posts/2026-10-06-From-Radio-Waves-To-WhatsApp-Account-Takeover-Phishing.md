@@ -1,6 +1,6 @@
 ---
 layout: post
-title: From Radio Waves to WhatsApp Takeover
+title: From Radio Waves to WhatsApp Account Takeover
 subtitle: Phishing & Account Takeover (ATO)
 tags: [phishing, whatsapp, account takeover]
 comments: false
