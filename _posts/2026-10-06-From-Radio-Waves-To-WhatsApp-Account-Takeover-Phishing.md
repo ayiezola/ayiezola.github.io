@@ -38,7 +38,7 @@ Here's the core of what we pulled during triage.
 | :--- | :--- |
 | **Lure URL** | <code style="color: #d73a49;">hxxps://avvf[.]me/pltjd</code> (rotating shortener) |
 | **Phishing Kit Hosts** | `wsappcenter.com` (suspended) · `apwscenter.com` (active) |
-| **Origin Server (exposed)** | <code style="color: #d73a49;">47.128.213.130</code> (AWS EC2, Singapore) |
+| **Origin Server (exposed)** | <code style="color: #d73a49;">47.***.***.130</code> (AWS EC2, Singapore) |
 | **Target Region** | 🇲🇾/🌏 Generic (kit default country code +86) |
 | **Impersonated Brand** | WhatsApp (Meta) — "WhatsApp 安全中心 / Security Center" |
 | **Attack Vector** | SMS / WhatsApp message → fake link → live-chat social engineering |
@@ -46,7 +46,7 @@ Here's the core of what we pulled during triage.
 | **Threat Status** | <span style="color: white; background-color: #d73a49; padding: 2px 8px; border-radius: 4px; font-weight: bold;">ACTIVE / MALICIOUS</span> |
 
 **The lure, word for word:**
-> "you whatsapp account has been flagged for a policy violation! Please verify your identity within 2 hours to avoid account suspension: https://avvf[.]me/pltjd"
+> "Your whatsapp account has been flagged for a policy violation! Please verify your identity within 2 hours to avoid account suspension: https://avvf[.]me/pltjd"
 
 ### 🚩 Red Flags
 > [!IMPORTANT]
@@ -55,6 +55,9 @@ Here's the core of what we pulled during triage.
 ---
 
 ## 3. Visual Analysis & Proofs
+
+First, a bit of context: we already know that the Malaysian government has banned links in SMS messages to prevent people from falling for scams and fraud. As a result, a link no longer arrives through the normal mobile messaging system. So when someone receives an SMS that contains a link, they should be suspicious. If that happens, we can smell something abnormal — and that situation should raise your awareness. 
+https://soyacincau.com/2024/09/02/mcmc-prohibited-sms-url-content-anti-scam-fraud-report/
 
 ### How it lands — Fake BTS first, then a short link
 The campaign has **two delivery hops**. The first one is the interesting part: a **Fake BTS**, the technique the TA originally used to get the lure onto victims' phones.
@@ -66,11 +69,11 @@ The campaign has **two delivery hops**. The first one is the interesting part: a
   <br><em>Diagram of Fake BTS. This is AI generated image</em>
 </p>
 
-A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the handset has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby handsets onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connect to the fake tower, the operator can:
+A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the mobile phone has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby mobile phones onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connect to the fake tower, the operator can:
 
 * **Spoof the sender ID** — the SMS can show whatever name or number they want (e.g. a "WhatsApp" alert), so it looks completely official.
 * **Bypass every telco filter** — the message never touches the carrier's SMS gateway, so spam/scam filtering simply never sees it.
-* **Hit everyone in range at once** — no need to know a victim's number; every handset nearby gets the text. No SIM farm, no per-SMS cost.
+* **Hit everyone in range at once** — no need to know a victim's number; every mobile phone nearby gets the text. No SIM farm, no per-SMS cost.
 * **Leave almost no trace** — no carrier logs tying the blast to the sender.
 
 For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" or "No Service"** just before an odd SMS lands from a sender that has no business texting you.
@@ -84,7 +87,7 @@ For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" o
   <br><em>Figure 1: Lure message received — account "flagged", verify within 2 hours.</em>
 </p>
 
-This message popped up on my phone right after we finished breakfast at a famous mamak restaurant around Jalan Semarak. Can you guess where? 😄
+This message popped up on my phone right after we finished breakfast at a famous mamak restaurant around Jalan Semarak. Can you guess where? 😄 Plus, the message pushes a sense of urgency ('verify within 2 hours') — a classic phishing pressure tactic designed to stop the victim from thinking.
 
 #### Fake BTS in the wild — Malaysia (2026)
 This isn't theoretical. Malaysian enforcers are chasing it right now:
@@ -100,6 +103,7 @@ This isn't theoretical. Malaysian enforcers are chasing it right now:
 From there it's the usual play: an **urgency hook** plus a **rotating short link** that bounces the victim onto a look-alike "WhatsApp Security Center".
 
 ### A. Landing Page Impersonation
+
 WhatsApp branding, bilingual copy (Chinese by default, English on tap) — it is designed to make it look official.
 
 <p align="center">
@@ -144,6 +148,9 @@ It stops being a "copy-paste phishing page" real quick:
 ## 4. Technical Findings & Data Exfiltration
 
 ### A. Infrastructure Recon
+
+Once I got home and fired up my lab, I opened the link and started observing it: clicking around at random, changing VPN exits, rotating my User-Agent, and doing some subdomain enumeration and WHOIS lookups. That surfaced three domains in total — the two kit hosts, wsappcenter.com and apwscenter.com, and the lure domain avvf.me;
+
 Digging into the domains, the usual tell-tales pop up:
 * **Registrars:** NameCheap (`wsappcenter.com`, `apwscenter.com`) and GNAME (`avvf.me`).
 * **Registration window:** 19–22 September 2026 — the whole thing is days old.
@@ -168,7 +175,7 @@ Sloppy hardening showed us the back room:
 ### C. The "Smoking Gun": Exposed Origin IP (Cloudflare Bypass)
 The biggest discovery from the whole thing (Actually i love this part :)): a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
 
-* **Origin IP:** `47.128.213.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-128-213-130.ap-southeast-1.compute.amazonaws.com`.
+* **Origin IP:** `47.***.***.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-128-213-130.ap-southeast-1.compute.amazonaws.com`.
 * **Stack:** nginx → Go, Debian 12. Ports **22 / 80 / 443** open (443 speaking plain HTTP).
 * **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain was suspended.
 
@@ -177,8 +184,8 @@ The biggest discovery from the whole thing (Actually i love this part :)): a **g
 dig +short whatsapp.wsappcenter.com A
 
 # Ask the authoritative NS directly — exposes the grey-cloud origin
-dig +short @salvador.ns.cloudflare.com whatsapp.wsappcenter.com A   # -> 47.128.213.130
-curl -sD- -H "Host: whatsapp.wsappcenter.com" http://47.128.213.130/ -o /dev/null   # 200, Server: nginx
+dig +short @salvador.ns.cloudflare.com whatsapp.wsappcenter.com A   # -> 47.***.***.130
+curl -sD- -H "Host: whatsapp.wsappcenter.com" http://47.***.***.130/ -o /dev/null   # 200, Server: nginx
 ```
 
 <p align="center">
@@ -247,7 +254,7 @@ Read the live-chat flow and it's clear — this is **social engineering, not a c
 
 They're not betting on a single URL. A **rotating shortener** (`avvf.me`) 302s victims across a fleet of look-alike hosts, and only pre-provisioned campaign slugs resolve — a textbook anti-blocklist setup.
 
-#### What we found:
+#### What has been found:
 * **Cluster A:** `whatsapp, whatsapp1–3.wsappcenter.com` — **clientHold (taken down 2026-10-04)**
 * **Cluster B:** `ws1–ws4.apwscenter.com` — **ACTIVE**
 * **Shortener:** `avvf.me` — wildcard DNS (domain now NXDOMAIN)
@@ -276,7 +283,7 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 * Alert on 302s from shortener hosts to `*.wsappcenter.com` / `ws*.apwscenter.com`.
 * Flag fake-brand pages whose CSP references `r2.cloudflarestorage.com`.
 * High-confidence: `<title>WhatsApp安全中心</title>` on any non-`whatsapp.com` domain.
-* **Fake BTS:** watch for handsets dropping to **2G/EDGE** right before suspicious SMS, and treat spoofed-sender-ID blasts as a rogue-tower indicator.
+* **Fake BTS:** watch for mobile phones dropping to **2G/EDGE** right before suspicious SMS, and treat spoofed-sender-ID blasts as a rogue-tower indicator.
 
 ---
 
@@ -285,7 +292,7 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 ```
 Domains : avvf.me  wsappcenter.com  apwscenter.com
 Hosts   : ws1-ws4.apwscenter.com ; whatsapp,whatsapp1-3.wsappcenter.com
-Origin  : 47.128.213.130  (AWS EC2 ap-southeast-1) — nginx -> Go, Debian 12
+Origin  : 47.***.***.130  (AWS EC2 ap-southeast-1) — nginx -> Go, Debian 12
 Storage : Cloudflare R2 bucket "netblaze-images"  (account 2a055cb59af47d7e8aaa7801de56dbf6)
 CF edge : 104.21.43.84 172.67.176.248  (apwscenter.com)
 SHA-256 : 3093485ffb42f0088d772fbecfa563339a6453a476ae62cefbeb4b2c3eea5706  index.html
