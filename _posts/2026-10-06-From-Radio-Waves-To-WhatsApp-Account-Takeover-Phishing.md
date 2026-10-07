@@ -116,6 +116,11 @@ WhatsApp branding, bilingual copy (Chinese by default, English on tap) — it is
   <br><em>Figure 3: English variant of the same kit.</em>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-023.png" alt="Fake WhatsApp Security Center (EN)" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 3: Form to lure victim to enter their phone number.</em>
+</p>
+
 ### B. From Fake Page to Account Takeover
 It stops being a "copy-paste phishing page" real quick:
 
@@ -135,6 +140,11 @@ It stops being a "copy-paste phishing page" real quick:
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-005.jpg" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 5: Device-specific kit (Android).</em>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-020.png" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 5: Code accessing whatsApp account.</em>
 </p>
 
 ### Indicators of Compromise (IoCs)
@@ -157,25 +167,40 @@ Digging into the domains, the usual tell-tales pop up:
 * **Localization:** the kit ships with **zh-CN, zh-TW, en-US and es-ES** skins, and defaults to country code **+86**.
 * **Certificate Transparency:** Let's Encrypt wildcard certs first issued 19–22 Sep 2026, re-issued 1 Oct 2026 — they keep it alive.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-021.png" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 5: New registered domain.</em>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-022.png" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 5: New registered domain.</em>
+</p>
+
 ### B. Server Misconfigurations (What They Left Wide Open)
 Sloppy hardening showed us the back room:
 * **Directory indexing:** `/assets/` and `/assets/verification/` hand out open directory listings (a classic Go `http.FileServer` slip), leaking `notify-bak.mp3` and extra locale files.
 * **Panel out in the open:** `/admin-login.html`, `/admin.js`, `/console.js`, `/sites.js`, `/templates.js` were publicly reachable. The API's auth-gated, but the entire operator UI downloads.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-011.png" alt="Operator panel login" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-025.png" alt="Operator panel login" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 6: Exposed operator panel login ("REALTIME TALK" agent workstation).</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-012.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-036.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 7: Content exposed via open directory indexing.</em>
 </p>
 
 ### C. The "Smoking Gun": Exposed Origin IP (Cloudflare Bypass)
 The biggest discovery from the whole thing (Actually i love this part :)): a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
 
-* **Origin IP:** `47.***.***.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-128-213-130.ap-southeast-1.compute.amazonaws.com`.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-042.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 7: Exposed origin IP Address.</em>
+</p>
+
+* **Origin IP:** `47.***.***.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-***-***-130.ap-southeast-1.compute.amazonaws.com`.
 * **Stack:** nginx → Go, Debian 12. Ports **22 / 80 / 443** open (443 speaking plain HTTP).
 * **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain was suspended.
 
@@ -189,17 +214,17 @@ curl -sD- -H "Host: whatsapp.wsappcenter.com" http://47.***.***.130/ -o /dev/nul
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-013.png" alt="Origin exposure" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-044.png" alt="Origin exposure" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 8: Origin-IP exposure — direct request returns the live kit (Cloudflare bypass).</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-014.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-045.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 9: Registrar status <code>clientHold</code> / NXDOMAIN after takedown.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-015.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-046.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 10: Let's Encrypt wildcard certificate (SAN list).</em>
 </p>
 
@@ -212,6 +237,12 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 ### A. Backend / Command & Control
 * **API:** REST + Server-Sent Events (Go `net/http`) — `/api/sessions`, `/api/conversations/{id}/events` (SSE), `/connect`.
 * **Panel API:** `/api/auth/{login,logout,me}`, `/api/agent/{conversations,quick-replies}`, `/api/admin/sites` — a **multi-site, multi-agent** panel ("Realtime Talk", localStorage key `realtime-talk-agent-read`).
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-037.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 10: Behind the admin panel.</em>
+</p>
+  
 * **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
 
 ### B. Geo-Targeting & Localization
@@ -221,6 +252,11 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 ### C. Operator Console
 * **Product:** internal name **"REALTIME TALK"** (Chinese 坐席工作台) — an off-the-shelf phishing-as-a-service panel with live chat, quick replies, and multi-site tenancy.
 * **Kit signature:** internal skin name **"mango"**; R2 project/bucket **"netblaze"**.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-025.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 10: Operator login page.</em>
+</p>
 
 ---
 
@@ -295,7 +331,7 @@ Hosts   : ws1-ws4.apwscenter.com ; whatsapp,whatsapp1-3.wsappcenter.com
 Origin  : 47.***.***.130  (AWS EC2 ap-southeast-1) — nginx -> Go, Debian 12
 Storage : Cloudflare R2 bucket "netblaze-images"  (account 2a055cb59af47d7e8aaa7801de56dbf6)
 CF edge : 104.21.43.84 172.67.176.248  (apwscenter.com)
-SHA-256 : 3093485ffb42f0088d772fbecfa563339a6453a476ae62cefbeb4b2c3eea5706  index.html
+SHA-256 : 31eb7c164e08ca4493b07fd3b86bd8d6b595c2682a655ce38db2fcc0b7d54b2e  index.html 
           34cd6ca4324d7890656efd1772bf48444ea4cd22bb10e61d785031c8104308a8  app.js
           209247dd28ccf82f8024906781fe057481ed217cf4062eef24419ecada5d6a71  style.css
 ```
