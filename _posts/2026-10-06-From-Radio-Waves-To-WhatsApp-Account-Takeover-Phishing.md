@@ -25,7 +25,7 @@ There's a live, well-built phishing campaign out there wearing a "WhatsApp **Sec
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-009.png" alt="WhatsApp Security Center Phishing Kit" width="900px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-034.png" alt="WhatsApp Security Center Phishing Kit" width="900px" style="border: 1px solid #ddd;"/>
   <br><em>Full Chain Phishing ATO — WhatsApp Linked Devices takeover.</em>
 </p>
 
