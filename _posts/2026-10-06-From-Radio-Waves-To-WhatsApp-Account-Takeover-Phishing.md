@@ -1,13 +1,13 @@
 ---
 layout: post
-title: WhatsApp "Linked Devices" Account Takeover Phishing Campaign
+title: From Radio Waves to WhatsApp Takeover
 subtitle: Phishing & Account Takeover (ATO)
 tags: [phishing, whatsapp, account takeover]
 comments: false
 author: Ayiezola
 ---
 
-# 🚨 Phishing Analysis: WhatsApp "Linked Devices" Account Takeover Campaign
+# 🚨 Phishing Analysis: From Radio Waves to WhatsApp Takeover: The Fake BTS → Linked Devices Kill Chain
 
 > **Date:** October 2026
 > **Target:** Malaysian WhatsApp users
