@@ -192,7 +192,7 @@ Sloppy hardening showed us the back room:
   <br><em>Figure 7: Content exposed via open directory indexing.</em>
 </p>
 
-### C. The "Smoking Gun": Exposed Origin IP (Cloudflare Bypass)
+### C. The "Smoking Gun": Exposed Origin IP Cloudflare
 The biggest discovery from the whole thing (Actually i love this part :)): a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
 
 <p align="center">
@@ -215,7 +215,12 @@ curl -sD- -H "Host: whatsapp.wsappcenter.com" http://47.***.***.130/ -o /dev/nul
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-044.png" alt="Origin exposure" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 8: Origin-IP exposure — direct request returns the live kit (Cloudflare bypass).</em>
+  <br><em>Figure 8: Origin-IP exposure — direct request returns the live kit (Cloudflare).</em>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-033.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 9: Phishing page kit has same body hash</em>
 </p>
 
 <p align="center">
