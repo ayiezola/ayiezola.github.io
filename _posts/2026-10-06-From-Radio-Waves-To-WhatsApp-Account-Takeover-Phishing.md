@@ -2,12 +2,12 @@
 layout: post
 title: "From Rogue Tower to Linked Device: Anatomy of a WhatsApp Hijack Campaign"
 subtitle: Phishing & Account Hijack
-tags: [phishing, whatsapp, account takeover]
+tags: [phishing, whatsapp, account hijack]
 comments: false
 author: Ayiezola
 ---
 
-# 🚨 Phishing Analysis: From Radio Waves to WhatsApp Takeover: The Fake BTS → Linked Devices Kill Chain
+# 🚨 Phishing Analysis: From Rogue Tower to Linked Device: Anatomy of a WhatsApp Hijack Campaign
 
 > **Date:** October 2026
 > **Target:** Malaysian WhatsApp users
@@ -16,7 +16,7 @@ author: Ayiezola
 ---
 
 ## 1. Executive Summary
-There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew most likely pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-character linking code**. Type that code in and it's game over: **full account takeover**.
+There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew most likely pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-character linking code**. Type that code in and it's game over: **full account hijack**.
 
 <div style="background-color: #ffe6e6; border-left: 6px solid #ff4d4d; padding: 15px; margin: 20px 0;">
   <strong>⚠️ DANGER:</strong> The domains <code>wsappcenter.com</code> / <code>apwscenter.com</code> and the lure <code>hxxps://avvf[.]me/pltjd</code> are confirmed <strong>MALICIOUS</strong>. Do not enter real data.
@@ -26,7 +26,7 @@ There's a live, well-built phishing campaign out there wearing a "WhatsApp **Sec
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-034.png" alt="WhatsApp Security Center Phishing Kit" width="900px" style="border: 1px solid #ddd;"/>
-  <br><em>Full Chain Phishing ATO — WhatsApp Linked Devices takeover.</em>
+  <br><em>Full Chain Phishing ATO — WhatsApp Linked Devices hijack.</em>
 </p>
 
 ---
@@ -42,7 +42,7 @@ Here's the core of what we pulled during triage.
 | **Target Region** | 🇲🇾 Malaysia Delivery |
 | **Impersonated Brand** | WhatsApp (Meta) — "WhatsApp 安全中心 / Security Center" |
 | **Attack Vector** | SMS Message → fake link → live-chat social engineering |
-| **Objective** | WhatsApp Account Takeover via **Linked Devices 8-character code** |
+| **Objective** | WhatsApp Account Hijack via **Linked Devices 8-character code** |
 | **Threat Status** | <span style="color: white; background-color: #d73a49; padding: 2px 8px; border-radius: 4px; font-weight: bold;">ACTIVE / MALICIOUS</span> |
 
 **The lure, word for word:**
@@ -70,7 +70,7 @@ The campaign has **two delivery hops**. The first one is the interesting part: a
   <br><em>Diagram of Fake BTS. This is AI generated image</em>
 </p>
 
-A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network — a man-in-the-middle for mobile traffic. The reason it works is a known GSM design gap: the mobile phone has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby mobile phones onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connect to the fake tower, the operator can:
+A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network. The reason it works is a known GSM design gap: the mobile phone has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby mobile phones onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connect to the fake tower, the operator can:
 
 * **Spoof the sender ID** — the SMS can show whatever name or number they want (e.g. a "WhatsApp" alert), so it looks completely official.
 * **Bypass every telco filter** — the message never touches the carrier's SMS gateway, so spam/scam filtering simply never sees it.
@@ -80,7 +80,7 @@ A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher
 For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" or "No Service"** just before an odd SMS lands from a sender that has no business texting you.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
-  <strong>Why it matters:</strong> Fake BTS is the most likely way the SMS slipped past carrier spam filters and lands looking 100% legit — that's the entire "first hop" of the attack. Everything that follows (the short link, the kit, the live chat) is essentially ordinary phishing once you click.
+  <strong>Why it matters:</strong> Fake BTS is the most likely way the SMS slipped past carrier spam filters and landed looking 100% legit — that's the entire "first hop" of the attack. Everything that follows (the short link, the kit, the live chat) is essentially ordinary phishing once you click.
 </div>
 
 <p align="center">
@@ -124,7 +124,7 @@ WhatsApp branding, bilingual copy (Chinese by default, English on tap) — it is
   <br><em>Figure 4: Form to lure victim to enter their phone number.</em>
 </p>
 
-### B. From Fake Page to Account Takeover
+### B. From Fake Page to Account Hijack
 It stops being a "copy-paste phishing page" real quick:
 
 1. **It fingerprints you first:** makes you pick **Android or iPhone**, then serves a matching skin in your language.
@@ -180,6 +180,8 @@ Digging into the domains, the usual tell-tales pop up:
   <br><em>Figure 9: wsappcenter.com new registered domain.</em>
 </p>
 
+* **Methodology:** All analysis was passive and unauthenticated. We only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
+
 ### B. Server Misconfigurations (What They Left Wide Open)
 Sloppy hardening showed us the back room:
 * **Directory indexing:** `/assets/` and `/assets/verification/` hand out open directory listings (a classic Go `http.FileServer` slip), leaking `notify-bak.mp3` and extra locale files.
@@ -196,7 +198,7 @@ Sloppy hardening showed us the back room:
 </p>
 
 ### C. The "Smoking Gun": Exposed Origin IP
-The biggest discovery from the whole thing (Actually i love this part :)): a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
+The biggest discovery from the whole thing (Actually i love this part :)): a **DNS record** that leaked the real origin.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-042.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
@@ -210,7 +212,7 @@ The biggest discovery from the whole thing (Actually i love this part :)): a **g
 
 * **Origin IP:** `47.***.***.130` — AWS EC2, `ap-southeast-1` (Singapore), `ec2-47-***-***-130.ap-southeast-1.compute.amazonaws.com`.
 * **Stack:** nginx → Go, Debian 12. Ports **22 / 80 / 443** open (443 speaking plain HTTP).
-* **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain was suspended.
+* **The bypass:** Requests sent directly to the origin with the original hostname still returned the kit after the domain was suspended.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-033.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
@@ -249,8 +251,6 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
   
 * **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
 
-* Methodology: All analysis was passive and unauthenticated. We only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
-
 ### B. Geo-Targeting & Localization
 
 * **Attributes:** free-text country-code field defaulting to +86; language skins for zh-CN, zh-TW, en-US and es-ES, with Simplified Chinese as the default.
@@ -277,7 +277,7 @@ Read the live-chat flow and it's clear — this is **social engineering, not a c
 #### The moving parts:
 * **A human operator.** A live agent chats with the victim, running the same playbook as a fake bank/security call.
 * **Abuse of a real feature.** They lean on WhatsApp's genuine **"Link with phone number"** flow. No malware, no dodgy APK — just a code.
-* **Full takeover.** Once linked, they can access your message history, contacts, the ability to **message as the victim**, and **interception of OTP/2FA codes** — all through WhatsApp.
+* **Full Hijack.** Once linked, they can access your message history, contacts, the ability to **message as the victim**, and **interception of OTP/2FA codes** — all through WhatsApp.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
   <strong>Note:</strong> This isn't a Man-in-the-Middle. It's pairing-code phishing. The code comes from the attacker's device, and entering it on your phone approves their device as one of your own. Never type a linking code someone else gives you.
