@@ -32,7 +32,7 @@ There's a live, well-built phishing campaign out there wearing a "WhatsApp **Sec
 ---
 
 ## 2. Threat Intelligence & Infrastructure
-Here's the core of what we pulled during triage.
+Here's the core of what pulled during triage.
 
 | Entity | Intelligence Detail |
 | :--- | :--- |
@@ -152,7 +152,6 @@ It stops being a "copy-paste phishing page" real quick:
 
 ### Indicators of Compromise (IoCs)
 * **URL:** `hxxps://avvf[.]me/pltjd`
-* **Name:** `[Insert Name]`
 * **WhatsApp Number:** `[Insert Phone Number]`
 * **8-character Linking Code:** `[Insert Code]`
 
@@ -180,7 +179,7 @@ Digging into the domains, the usual tell-tales pop up:
   <br><em>Figure 9: wsappcenter.com new registered domain.</em>
 </p>
 
-* **Methodology:** All analysis was passive and unauthenticated. We only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
+* **Methodology:** All analysis was passive and unauthenticated. Only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
 
 ### B. Server Misconfigurations (What They Left Wide Open)
 Sloppy hardening showed us the back room:
@@ -249,7 +248,7 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
   <br><em>Figure 18: Client-side JavaScript files (admin.js, console.js) publicly served by the phishing server without authentication.</em>
 </p>
   
-* **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
+* **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
 
 ### B. Geo-Targeting & Localization
 
@@ -328,7 +327,7 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 Domains : avvf.me  wsappcenter.com  apwscenter.com
 Hosts   : ws1-ws4.apwscenter.com ; whatsapp,whatsapp1-3.wsappcenter.com
 Origin  : 47.***.***.130  (AWS EC2 ap-southeast-1) — nginx -> Go, Debian 12
-Storage : Cloudflare R2 bucket "netblaze-images"  (account *redacted*)
+Storage : Cloudflare R2 (pre-signed S3 uploads; bucket/account not retained)
 CF edge : 104.**.**.84 172.**.***.248  (apwscenter.com)
 SHA-256 : 31eb7c164e08ca4493b07fd3b86bd8d6b595c2682a655ce38db2fcc0b7d54b2e  index.html 
           34cd6ca4324d7890656efd1772bf48444ea4cd22bb10e61d785031c8104308a8  app.js
