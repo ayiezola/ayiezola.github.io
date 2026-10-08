@@ -1,7 +1,7 @@
 ---
 layout: post
-title: From Radio Waves to WhatsApp Account Takeover
-subtitle: Phishing & Account Takeover (ATO)
+title: "From Rogue Tower to Linked Device: Anatomy of a WhatsApp Hijack Campaign"
+subtitle: Phishing & Account Hijack
 tags: [phishing, whatsapp, account takeover]
 comments: false
 author: Ayiezola
@@ -16,7 +16,7 @@ author: Ayiezola
 ---
 
 ## 1. Executive Summary
-There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-character linking code**. Hand that code over and it's game over: **full account takeover**.
+There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew most likely pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-character linking code**. Type that code in and it's game over: **full account takeover**.
 
 <div style="background-color: #ffe6e6; border-left: 6px solid #ff4d4d; padding: 15px; margin: 20px 0;">
   <strong>⚠️ DANGER:</strong> The domains <code>wsappcenter.com</code> / <code>apwscenter.com</code> and the lure <code>hxxps://avvf[.]me/pltjd</code> are confirmed <strong>MALICIOUS</strong>. Do not enter real data.
@@ -61,7 +61,7 @@ First, a bit of context: we already know that the Malaysian government has banne
 [MCMC: URLs no longer allowed for all SMS, here’s how to report them](https://soyacincau.com/2024/09/02/mcmc-prohibited-sms-url-content-anti-scam-fraud-report/)
 
 ### How it lands — Fake BTS first, then a short link
-The campaign has **two delivery hops**. The first one is the interesting part: a **Fake BTS**, the technique the TA originally used to get the lure onto victims' phones.
+The campaign has **two delivery hops**. The first one is the interesting part: a **Fake BTS**, the technique the TA most likely used to get the lure onto victims' phones.
 
 #### Method 1 — Fake BTS (False Base Station) SMS
 
@@ -80,7 +80,7 @@ A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher
 For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" or "No Service"** just before an odd SMS lands from a sender that has no business texting you.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
-  <strong>Why it matters:</strong> Fake BTS is how the SMS slips past carrier spam filters and lands looking 100% legit — that's the entire "first hop" of the attack. Everything that follows (the short link, the kit, the live chat) is essentially ordinary phishing once you click.
+  <strong>Why it matters:</strong> Fake BTS is the most likely way the SMS slipped past carrier spam filters and lands looking 100% legit — that's the entire "first hop" of the attack. Everything that follows (the short link, the kit, the live chat) is essentially ordinary phishing once you click.
 </div>
 
 <p align="center">
@@ -212,33 +212,24 @@ The biggest discovery from the whole thing (Actually i love this part :)): a **g
 * **Stack:** nginx → Go, Debian 12. Ports **22 / 80 / 443** open (443 speaking plain HTTP).
 * **The bypass:** fire `Host: whatsapp.wsappcenter.com` straight at the origin and it serves the **whole kit and panel** — even after the domain was suspended.
 
-```bash
-# Public recursive lookup — NXDOMAIN (registrar clientHold)
-dig +short whatsapp.wsappcenter.com A
-
-# Ask the authoritative NS directly — exposes the grey-cloud origin
-dig +short @salvador.ns.cloudflare.com whatsapp.wsappcenter.com A   # -> 47.***.***.130
-curl -sD- -H "Host: whatsapp.wsappcenter.com" http://47.***.***.130/ -o /dev/null   # 200, Server: nginx
-```
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-044.png" alt="Origin exposure" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 14: Origin-IP exposure — direct request returns the live kit (Cloudflare).</em>
-</p>
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-033.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 15: Phishing page kit has same body hash</em>
+  <br><em>Figure 14: Phishing page kit has same body hash</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-045.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 16: Registrar status <code>clientHold</code> / NXDOMAIN after takedown.</em>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-048.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 15: Registrar status <code>clientHold</code> / NXDOMAIN after takedown.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-046.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 17: Let's Encrypt wildcard certificate (SAN list).</em>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-049.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 16: Let's Encrypt wildcard certificate for domain apwscenter.com</em>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-050.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 17: Let's Encrypt wildcard certificate for wsappcenter.com</em>
 </p>
 
 ---
@@ -288,17 +279,6 @@ Read the live-chat flow and it's clear — this is **social engineering, not a c
 * **Abuse of a real feature.** They lean on WhatsApp's genuine **"Link with phone number"** flow. No malware, no dodgy APK — just a code.
 * **Full takeover.** Once linked, they can access your message history, contacts, the ability to **message as the victim**, and **interception of OTP/2FA codes** — all through WhatsApp.
 
-**Captured data payload (conceptual):**
-```json
-{
-  "visitor_id": "session_id",
-  "device": "iPhone|Android",
-  "phone_number": "Victim_Number",
-  "linked_device_code": "8_CHARACTER_CODE",
-  "locale": "zh-CN|zh-TW|en-US|es-ES"
-}
-```
-
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
   <strong>Note:</strong> This isn't a Man-in-the-Middle. It's pairing-code phishing. The code comes from the attacker's device, and entering it on your phone approves their device as one of your own. Never type a linking code someone else gives you.
 </div>
@@ -321,7 +301,7 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 
 ## 8. Prevention & Reporting
 
-**The one rule to remember:** WhatsApp **never** asks you to verify your account through a link, nor does it asks you to share or enter an **8-character linking code** to a "support agent". That code is a **key to your account** — treat it like your password.
+**The one rule to remember:** WhatsApp **never** asks you to verify your account through a link, nor does it asks you to share or enter an **8-character linking code** given to you by a "support agent". That code is a **key to your account** — treat it like your password.
 
 **Already entered a code?**
 1. Open WhatsApp → **Linked Devices** → **remove anything you don't recognise**.
