@@ -90,7 +90,7 @@ For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" o
 
 Why we believe this came from a Fake BTS: The message arrived as a standard SMS (not RCS or iMessage), showed the alphanumeric sender name "WhatsApp", and contained a clickable URL. Since 1 September 2024, MCMC has required Malaysian telcos to block SMS containing URLs, and ordinary SIM-based scam senders cannot set a branded sender name like "WhatsApp." A message with both characteristics reaching a phone strongly suggests it bypassed the carrier network entirely, which is exactly what a Fake BTS does. We did not capture radio-level evidence (such as the phone dropping to 2G at the time of receipt), so we classify Fake BTS delivery as highly likely rather than confirmed.
 
-This message popped up on my phone right after we finished breakfast at a famous mamak restaurant around Jalan Semarak. Can you guess where? 😄 Plus, the message pushes a sense of urgency ('verify within 2 hours') — a classic phishing pressure tactic designed to stop the victim from thinking.
+This message landed on my phone just as we were leaving a crowded area around Jalan Semarak. That fits the Fake BTS pattern, since rogue towers target busy places to reach as many phones as possible. Note also the sense of urgency ("verify within 2 hours"): a classic phishing pressure tactic designed to stop the victim from thinking clearly.
 
 #### Fake BTS in the wild — Malaysia (2026)
 This isn't theoretical. Malaysian enforcers are chasing it right now:
