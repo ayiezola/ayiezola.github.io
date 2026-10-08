@@ -16,7 +16,7 @@ author: Ayiezola
 ---
 
 ## 1. Executive Summary
-There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-digit linking code**. Hand that code over and it's game over: **full account takeover**.
+There's a live, well-built phishing campaign out there wearing a "WhatsApp **Security Center**" mask — and what it's after isn't your password. It's your **entire WhatsApp account**. The hook is a text telling you your account got **flagged for a policy violation** and you've got **two hours** to "verify" or it's gone. And the way that first text even reaches you is nastier than a normal SMS blast: the crew pushes it from a **Fake BTS (rogue cell tower)** to slip straight past your telco's filters. Click through and you land on a fake WhatsApp page — except there's a **real person on the other end** of a chat, slowly talking you into linking **their** device with WhatsApp's own **8-character linking code**. Hand that code over and it's game over: **full account takeover**.
 
 <div style="background-color: #ffe6e6; border-left: 6px solid #ff4d4d; padding: 15px; margin: 20px 0;">
   <strong>⚠️ DANGER:</strong> The domains <code>wsappcenter.com</code> / <code>apwscenter.com</code> and the lure <code>hxxps://avvf[.]me/pltjd</code> are confirmed <strong>MALICIOUS</strong>. Do not enter real data.
@@ -39,10 +39,10 @@ Here's the core of what we pulled during triage.
 | **Lure URL** | <code style="color: #d73a49;">hxxps://avvf[.]me/pltjd</code> (rotating shortener) |
 | **Phishing Kit Hosts** | `wsappcenter.com` (suspended) · `apwscenter.com` (active) |
 | **Origin Server (exposed)** | <code style="color: #d73a49;">47.***.***.130</code> (AWS EC2, Singapore) |
-| **Target Region** | 🇲🇾/🌏 Generic (kit default country code +86) |
+| **Target Region** | 🇲🇾 Malaysia Delivery |
 | **Impersonated Brand** | WhatsApp (Meta) — "WhatsApp 安全中心 / Security Center" |
-| **Attack Vector** | SMS / WhatsApp message → fake link → live-chat social engineering |
-| **Objective** | WhatsApp Account Takeover via **Linked Devices 8-digit code** |
+| **Attack Vector** | SMS Message → fake link → live-chat social engineering |
+| **Objective** | WhatsApp Account Takeover via **Linked Devices 8-character code** |
 | **Threat Status** | <span style="color: white; background-color: #d73a49; padding: 2px 8px; border-radius: 4px; font-weight: bold;">ACTIVE / MALICIOUS</span> |
 
 **The lure, word for word:**
@@ -87,6 +87,8 @@ For the victim the tell is subtle: the phone may briefly **drop to "2G / EDGE" o
   <br><em>Figure 1: Lure message received — account "flagged", verify within 2 hours.</em>
 </p>
 
+Why we believe this came from a Fake BTS: The message arrived as a standard SMS (not RCS or iMessage), showed the alphanumeric sender name "WhatsApp", and contained a clickable URL. Since 1 September 2024, MCMC has required Malaysian telcos to block SMS containing URLs, and ordinary SIM-based scam senders cannot set a branded sender name like "WhatsApp." A message with both characteristics reaching a phone strongly suggests it bypassed the carrier network entirely, which is exactly what a Fake BTS does. We did not capture radio-level evidence (such as the phone dropping to 2G at the time of receipt), so we classify Fake BTS delivery as highly likely rather than confirmed.
+
 This message popped up on my phone right after we finished breakfast at a famous mamak restaurant around Jalan Semarak. Can you guess where? 😄 Plus, the message pushes a sense of urgency ('verify within 2 hours') — a classic phishing pressure tactic designed to stop the victim from thinking.
 
 #### Fake BTS in the wild — Malaysia (2026)
@@ -126,10 +128,10 @@ It stops being a "copy-paste phishing page" real quick:
 
 1. **It fingerprints you first:** makes you pick **Android or iPhone**, then serves a matching skin in your language.
 2. **Then puts a human on the line:** a **real-time chat** opens with an operator (the "REALTIME TALK" panel backend) who enggages with you and gradually builds your trust.
-3. **Then walks you into the trap:** the operator tells you to open WhatsApp → **Linked Devices** → *Link with phone number* → and key in the **8-digit code they provide**.
+3. **Then walks you into the trap:** the operator tells you to open WhatsApp → **Linked Devices** → *Link with phone number* → and key in the **8-character code they provide**.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
-  <strong>Note:</strong> You're actually being tricked into linking the <strong>attacker's</strong> device to your WhatsApp. Entering 8-digit code doesn't "verify" anything — it gives them your chats, your contacts, and any <strong>OTP / 2FA code</strong> that lands in your WhatsApp.
+  <strong>Note:</strong> You're actually being tricked into linking the <strong>attacker's</strong> device to your WhatsApp. Entering 8-character code doesn't "verify" anything — it gives them your chats, your contacts, and any <strong>OTP / 2FA code</strong> that lands in your WhatsApp.
 </div>
 
 <p align="center">
@@ -151,7 +153,7 @@ It stops being a "copy-paste phishing page" real quick:
 * **URL:** `hxxps://avvf[.]me/pltjd`
 * **Name:** `[Insert Name]`
 * **WhatsApp Number:** `[Insert Phone Number]`
-* **8-digit Linking Code:** `[Insert Code]`
+* **8-character Linking Code:** `[Insert Code]`
 
 ---
 
@@ -192,7 +194,7 @@ Sloppy hardening showed us the back room:
   <br><em>Figure 11: Content exposed via open directory indexing.</em>
 </p>
 
-### C. The "Smoking Gun": Exposed Origin IP Cloudflare
+### C. The "Smoking Gun": Exposed Origin IP
 The biggest discovery from the whole thing (Actually i love this part :)): a **grey-cloud (DNS-only) record** that leaked the real origin sitting behind Cloudflare.
 
 <p align="center">
@@ -249,18 +251,22 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 * **Panel API:** `/api/auth/{login,logout,me}`, `/api/agent/{conversations,quick-replies}`, `/api/admin/sites` — a **multi-site, multi-agent** panel ("Realtime Talk", localStorage key `realtime-talk-agent-read`).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-037.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 18: Behind the admin panel.</em>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-047.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 18: Client-side JavaScript files (admin.js, console.js) publicly served by the phishing server without authentication.</em>
 </p>
   
 * **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
 
 ### B. Geo-Targeting & Localization
-* **Attributes:** free-text country-code field; kit defaults to **+86**.
-* **What it tells us:** the kit was specifically designed to target Chinese-speaking victims — the EN/ES/zh-TW skins mean they're now **adapting it for a wider global audience**, which is exactly why Malaysian users are being targeted.
+
+* **Attributes:** free-text country-code field defaulting to +86; language skins for zh-CN, zh-TW, en-US and es-ES, with Simplified Chinese as the default.
+* **What the +86 default tells us:** WhatsApp is blocked in mainland China, so mainland users are unlikely to be the real targets. The +86 default more likely points to the kit's origin: it was probably built by, or for, a Chinese-speaking operator and left on its default setting.
+* **What the language skins tell us:** The kit is built to run anywhere. Simplified and Traditional Chinese, English and Spanish cover a wide range of WhatsApp users, and the free-text country-code field means any number in any country works.
+* **Why Malaysia:** Nothing in the kit is Malaysia-specific. Malaysia is targeted through the delivery, not the kit.
+* **Bottom line:** a generic, multi-language kit pointed at Malaysian victims by a local delivery operation. Who built the kit and who runs the Malaysian campaign may not be the same people.
 
 ### C. Operator Console
-* **Product:** internal name **"REALTIME TALK"** (Chinese 坐席工作台) — an off-the-shelf phishing-as-a-service panel with live chat, quick replies, and multi-site tenancy.
+* **Product:** internal name **"REALTIME TALK"** (Chinese 坐席工作台) — A panel with live chat, quick replies, and multi-site tenancy.
 * **Kit signature:** internal skin name **"mango"**; R2 project/bucket **"netblaze"**.
 
 <p align="center">
@@ -285,13 +291,13 @@ Read the live-chat flow and it's clear — this is **social engineering, not a c
   "visitor_id": "session_id",
   "device": "iPhone|Android",
   "phone_number": "Victim_Number",
-  "linked_device_code": "8_DIGIT_CODE",
+  "linked_device_code": "8_CHARACTER_CODE",
   "locale": "zh-CN|zh-TW|en-US|es-ES"
 }
 ```
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
-  <strong>Note:</strong> This is a <strong>Man-in-the-Middle (MitM)</strong>-style takeover — the "linking code" is the OTP-equivalent secret. Read it to anyone and the account is theirs.
+  <strong>Note:</strong> This isn't a Man-in-the-Middle. It's pairing-code phishing. The code comes from the attacker's device, and entering it on your phone approves their device as one of your own. Never type a linking code someone else gives you.
 </div>
 
 ---
@@ -312,7 +318,7 @@ Every node serves a **byte-identical** page (same hashes), all sharing the same 
 
 ## 8. Prevention & Reporting
 
-**The one rule to remember:** WhatsApp **never** asks you to verify your account through a link, nor does it asks you to share or enter an **8-digit linking code** to a "support agent". That code is a **key to your account** — treat it like your password.
+**The one rule to remember:** WhatsApp **never** asks you to verify your account through a link, nor does it asks you to share or enter an **8-character linking code** to a "support agent". That code is a **key to your account** — treat it like your password.
 
 **Already entered a code?**
 1. Open WhatsApp → **Linked Devices** → **remove anything you don't recognise**.
@@ -340,7 +346,7 @@ Domains : avvf.me  wsappcenter.com  apwscenter.com
 Hosts   : ws1-ws4.apwscenter.com ; whatsapp,whatsapp1-3.wsappcenter.com
 Origin  : 47.***.***.130  (AWS EC2 ap-southeast-1) — nginx -> Go, Debian 12
 Storage : Cloudflare R2 bucket "netblaze-images"  (account *redacted*)
-CF edge : 104.21.43.84 172.67.176.248  (apwscenter.com)
+CF edge : 104.**.**.84 172.**.***.248  (apwscenter.com)
 SHA-256 : 31eb7c164e08ca4493b07fd3b86bd8d6b595c2682a655ce38db2fcc0b7d54b2e  index.html 
           34cd6ca4324d7890656efd1772bf48444ea4cd22bb10e61d785031c8104308a8  app.js
           209247dd28ccf82f8024906781fe057481ed217cf4062eef24419ecada5d6a71  style.css
