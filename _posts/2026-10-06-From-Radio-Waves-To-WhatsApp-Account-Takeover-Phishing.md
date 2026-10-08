@@ -258,6 +258,8 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
   
 * **The clever bit:** Any information uploaded by the victim upload will gets pushed to a **Cloudflare R2** bucket (`netblaze-images`) via **pre-signed S3 URLs** (`connect-src https://*.r2.cloudflarestorage.com`). Stashing it off-box means they keep the loot even if you kill a front-end node.
 
+* Methodology: All analysis was passive and unauthenticated. We only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
+
 ### B. Geo-Targeting & Localization
 
 * **Attributes:** free-text country-code field defaulting to +86; language skins for zh-CN, zh-TW, en-US and es-ES, with Simplified Chinese as the default.
