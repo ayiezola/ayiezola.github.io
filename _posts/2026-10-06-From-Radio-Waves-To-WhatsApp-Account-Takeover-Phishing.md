@@ -57,7 +57,8 @@ Here's the core of what we pulled during triage.
 ## 3. Visual Analysis & Proofs
 
 First, a bit of context: we already know that the Malaysian government has banned links in SMS messages to prevent people from falling for scams and fraud. As a result, a link no longer arrives through the normal mobile messaging system. So when someone receives an SMS that contains a link, they should be suspicious. If that happens, we can smell something abnormal — and that situation should raise your awareness. 
-https://soyacincau.com/2024/09/02/mcmc-prohibited-sms-url-content-anti-scam-fraud-report/
+
+[MCMC: URLs no longer allowed for all SMS, here’s how to report them](https://soyacincau.com/2024/09/02/mcmc-prohibited-sms-url-content-anti-scam-fraud-report/)
 
 ### How it lands — Fake BTS first, then a short link
 The campaign has **two delivery hops**. The first one is the interesting part: a **Fake BTS**, the technique the TA originally used to get the lure onto victims' phones.
