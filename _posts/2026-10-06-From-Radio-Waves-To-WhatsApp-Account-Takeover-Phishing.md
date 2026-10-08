@@ -171,13 +171,13 @@ Digging into the domains, the usual tell-tales pop up:
 * **Certificate Transparency:** Let's Encrypt wildcard certs first issued 19–22 Sep 2026, re-issued 1 Oct 2026 — they keep it alive.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-021.png" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 8: New registered domain.</em>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-021.png" alt="apwscenter.com" width="700px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 8: apwscenter.com is new registered domain.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-022.png" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 9: New registered domain.</em>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-022.png" alt="wsappcenter.com" width="700px" style="border: 1px solid #ddd;"/>
+  <br><em>Figure 9: wsappcenter.com new registered domain.</em>
 </p>
 
 ### B. Server Misconfigurations (What They Left Wide Open)
