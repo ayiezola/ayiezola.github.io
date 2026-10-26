@@ -5,6 +5,7 @@ subtitle: Phishing & Account Hijack
 tags: [phishing, whatsapp, account hijack]
 comments: false
 author: Ayiezola
+share-img: https://ayiezola.github.io/assets/phishing-whatsapp-ato/github-post.png
 ---
 
 # 🚨 Phishing Analysis: From Rogue Tower to Linked Device: Anatomy of a WhatsApp Hijack Campaign
