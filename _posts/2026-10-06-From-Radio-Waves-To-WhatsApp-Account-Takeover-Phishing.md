@@ -324,7 +324,7 @@ Domains : avvf.me  wsappcenter.com  apwscenter.com
 Hosts   : ws1-ws4.apwscenter.com ; whatsapp,whatsapp1-3.wsappcenter.com
 Origin  : 47.***.***.130  (AWS EC2 ap-southeast-1) — nginx -> Go, Debian 12
 Storage : Cloudflare R2 (pre-signed S3 uploads; bucket/account not retained)
-CF edge : 104.**.**.84 172.**.***.248  (apwscenter.com)
+CDN : Use famous domain fronting
 SHA-256 : 31eb7c164e08ca4493b07fd3b86bd8d6b595c2682a655ce38db2fcc0b7d54b2e  index.html 
           34cd6ca4324d7890656efd1772bf48444ea4cd22bb10e61d785031c8104308a8  app.js
           209247dd28ccf82f8024906781fe057481ed217cf4062eef24419ecada5d6a71  style.css
