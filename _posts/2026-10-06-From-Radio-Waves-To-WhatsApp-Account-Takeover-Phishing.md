@@ -33,7 +33,7 @@ There's a live, well-built phishing campaign out there wearing a "WhatsApp **Sec
 ---
 
 ## 2. Threat Intelligence & Infrastructure
-Here's the core of what i pulled during triage.
+Here's the core of what I pulled during triage.
 
 | Entity | Intelligence Detail |
 | :--- | :--- |
@@ -71,7 +71,7 @@ The campaign has **two delivery hops**. The first one is the interesting part: a
   <br><em>Diagram of Fake BTS. This is AI generated image</em>
 </p>
 
-A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network. The reason it works is a known GSM design gap: the mobile phone has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby mobile phones onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connect to the fake tower, the operator can:
+A **Fake BTS** (a.k.a. false base station, cell-site simulator, or "IMSI catcher") is exactly what it sounds like: a **fake mobile tower** that stands between the victim's phone and the real network. The reason it works is a known GSM design gap: the mobile phone has to prove itself to the network, but the **network never proves itself to the phone**. So a rogue tower can pull nearby mobile phones onto it — often by **forcing phones down from 4G/5G to 2G**, which has no mutual authentication. Once the phones are connected to the fake tower, the operator can:
 
 * **Spoof the sender ID** — the SMS can show whatever name or number they want (e.g. a "WhatsApp" alert), so it looks completely official.
 * **Bypass every telco filter** — the message never touches the carrier's SMS gateway, so spam/scam filtering simply never sees it.
@@ -129,7 +129,7 @@ WhatsApp branding, bilingual copy (Chinese by default, English on tap) — it is
 It stops being a "copy-paste phishing page" real quick:
 
 1. **It fingerprints you first:** makes you pick **Android or iPhone**, then serves a matching skin in your language.
-2. **Then puts a human on the line:** a **real-time chat** opens with an operator (the "REALTIME TALK" panel backend) who enggages with you and gradually builds your trust.
+2. **Then puts a human on the line:** a **real-time chat** opens with an operator (the "REALTIME TALK" panel backend) who engages with you and gradually builds your trust.
 3. **Then walks you into the trap:** the operator tells you to open WhatsApp → **Linked Devices** → *Link with phone number* → and key in the **8-character code they provide**.
 
 <div style="background-color: #fff3cd; border-left: 6px solid #ffecb5; padding: 15px; margin: 20px 0; color: #856404;">
