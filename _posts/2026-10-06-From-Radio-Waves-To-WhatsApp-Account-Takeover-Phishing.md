@@ -147,7 +147,7 @@ It stops being a "copy-paste phishing page" real quick:
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-020.png" alt="OTP Code" width="700px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-020.png" alt="Linked Device Code" width="700px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 7: Code accessing whatsApp account.</em>
 </p>
 
@@ -245,7 +245,7 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 * **Panel API:** `/api/auth/{login,logout,me}`, `/api/agent/{conversations,quick-replies}`, `/api/admin/sites` — a **multi-site, multi-agent** panel ("Realtime Talk", localStorage key `realtime-talk-agent-read`).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-047.png" alt="Client Java Script Files" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-047.png" alt="Client-side JavaScript Files" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 18: Client-side JavaScript files (admin.js, console.js) publicly served by the phishing server without authentication.</em>
 </p>
   
@@ -262,11 +262,6 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 ### C. Operator Console
 * **Product:** internal name **"REALTIME TALK"** (Chinese 坐席工作台) — A panel with live chat, quick replies, and multi-site tenancy.
 * **Kit signature:** internal skin name **"mango"**.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-025.png" alt="Operator Login Page" width="800px" style="border: 1px solid #ddd;"/>
-  <br><em>Figure 19: Operator login page.</em>
-</p>
 
 ---
 
