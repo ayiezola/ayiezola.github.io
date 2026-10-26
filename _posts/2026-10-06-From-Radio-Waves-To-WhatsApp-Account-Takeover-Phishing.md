@@ -32,7 +32,7 @@ There's a live, well-built phishing campaign out there wearing a "WhatsApp **Sec
 ---
 
 ## 2. Threat Intelligence & Infrastructure
-Here's the core of what pulled during triage.
+Here's the core of what i pulled during triage.
 
 | Entity | Intelligence Detail |
 | :--- | :--- |
@@ -146,7 +146,7 @@ It stops being a "copy-paste phishing page" real quick:
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-020.png" alt="Kit on Android" width="700px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-020.png" alt="OTP Code" width="700px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 7: Code accessing whatsApp account.</em>
 </p>
 
@@ -179,7 +179,7 @@ Digging into the domains, the usual tell-tales pop up:
   <br><em>Figure 9: wsappcenter.com new registered domain.</em>
 </p>
 
-* **Methodology:** All analysis was passive and unauthenticated. Only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
+* **Methodology:** All analysis was passive and unauthenticated. We only retrieved files the server publicly served to any visitor (including via open directory listings), and we did not log in, guess credentials, use the panel's authenticated API, or exploit any vulnerability.
 
 ### B. Server Misconfigurations (What They Left Wide Open)
 Sloppy hardening showed us the back room:
@@ -200,12 +200,12 @@ Sloppy hardening showed us the back room:
 The biggest discovery from the whole thing (Actually i love this part :)): a **DNS record** that leaked the real origin.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-042.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-042.png" alt="Expose origin IP Address" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 12: Exposed origin IP Address.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-043.png" alt="Open directory listing" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-043.png" alt="Exposed AWS EC2 Hostname" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 13: Exposed AWS EC2 hostnames.</em>
 </p>
 
@@ -214,22 +214,22 @@ The biggest discovery from the whole thing (Actually i love this part :)): a **D
 * **The bypass:** Requests sent directly to the origin with the original hostname still returned the kit after the domain was suspended.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-033.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-033.png" alt="Phishing Hash" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 14: Phishing page kit has same body hash</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-048.png" alt="Registrar clientHold" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-048.png" alt="Registrar status clientHold" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 15: Registrar status <code>clientHold</code> / NXDOMAIN after takedown.</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-049.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-049.png" alt="TLS certificate for domain apwscenter.com" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 16: Let's Encrypt wildcard certificate for domain apwscenter.com</em>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-050.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-050.png" alt="TLS certificate for wsappcenter.com" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 17: Let's Encrypt wildcard certificate for wsappcenter.com</em>
 </p>
 
@@ -244,7 +244,7 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 * **Panel API:** `/api/auth/{login,logout,me}`, `/api/agent/{conversations,quick-replies}`, `/api/admin/sites` — a **multi-site, multi-agent** panel ("Realtime Talk", localStorage key `realtime-talk-agent-read`).
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-047.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-047.png" alt="Client Java Script Files" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 18: Client-side JavaScript files (admin.js, console.js) publicly served by the phishing server without authentication.</em>
 </p>
   
@@ -260,10 +260,10 @@ Pop the hood on the kit's JavaScript and traffic, and you find the "brain" of th
 
 ### C. Operator Console
 * **Product:** internal name **"REALTIME TALK"** (Chinese 坐席工作台) — A panel with live chat, quick replies, and multi-site tenancy.
-* **Kit signature:** internal skin name **"mango"**; R2 project/bucket **"netblaze"**.
+* **Kit signature:** internal skin name **"mango"**.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-025.png" alt="TLS certificate" width="800px" style="border: 1px solid #ddd;"/>
+  <img src="https://raw.githubusercontent.com/ayiezola/ayiezola.github.io/master/assets/phishing-whatsapp-ato/wa-ato-025.png" alt="Operator Login Page" width="800px" style="border: 1px solid #ddd;"/>
   <br><em>Figure 19: Operator login page.</em>
 </p>
 
